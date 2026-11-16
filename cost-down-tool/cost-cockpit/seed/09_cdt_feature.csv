@@ -1,0 +1,4 @@
+cdt_code,cdt_name,cdt_Product@cdt_code,cdt_category,cdt_isstandard,cdt_description
+F-OUTDOOR,Outdoor installation,DEMO,Plant layout,No,Electrolyser modules installed outdoors; smaller building
+F-REDUNDANT,Redundant rectifier (N+1),DEMO,Availability,No,One additional rectifier unit per plant section
+F-COMPRESSION,Hydrogen compression to 30 bar,DEMO,Product gas,No,Compressor package downstream of purification

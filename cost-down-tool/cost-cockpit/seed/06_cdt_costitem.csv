@@ -1,0 +1,29 @@
+cdt_importkey,cdt_name,cdt_CostVersion@cdt_code,cdt_CBSElement@cdt_code,cdt_costtype,cdt_teamcenteritemid,cdt_Supplier@cdt_teamcenterid,cdt_quantity,cdt_unit,cdt_unitprice,cdt_currencycode,cdt_fxrate,cdt_amounteur,cdt_pricesource,cdt_pricedate,cdt_confidence,cdt_makebuy
+DEMO-V001~DEMO-1.1~100001,Cell stack,DEMO-V001,DEMO-1.1,Material,100001,S-001,5,pc,4000000,EUR,1,20000000,Teamcenter,2026-09-15,High,Make
+DEMO-V001~DEMO-1.2~100002,Module frame and piping,DEMO-V001,DEMO-1.2,Material,100002,S-002,5,pc,1000000,EUR,1,5000000,Teamcenter,2026-09-15,High,Buy
+DEMO-V001~DEMO-1.2~L03,Module assembly,DEMO-V001,DEMO-1.2,Manufacturing & assembly,,,5,pc,400000,EUR,1,2000000,Estimate,2026-09-15,Medium,Make
+DEMO-V001~DEMO-2.1~100010,Separators and electrolyte system,DEMO-V001,DEMO-2.1,Material,100010,S-003,1,lot,6000000,EUR,1,6000000,Teamcenter,2026-09-15,Medium,Buy
+DEMO-V001~DEMO-2.2~100020,Purification and drying unit,DEMO-V001,DEMO-2.2,Material,100020,S-004,1,lot,4000000,EUR,1,4000000,Supplier quote,2026-09-15,Medium,Buy
+DEMO-V001~DEMO-3.1~100030,Transformer-rectifier set,DEMO-V001,DEMO-3.1,Material,100030,S-005,1,lot,13200000,USD,0.9,11880000.0,Supplier quote,2026-09-15,Medium,Buy
+DEMO-V001~DEMO-4.1~100040,Cooling and water treatment package,DEMO-V001,DEMO-4.1,Material,100040,S-006,1,lot,5000000,EUR,1,5000000,Teamcenter,2026-09-15,Medium,Buy
+DEMO-V001~DEMO-5.1~L08,Building materials,DEMO-V001,DEMO-5.1,Material,,,1,lot,3000000,EUR,1,3000000,Estimate,2026-09-15,Low,Buy
+DEMO-V001~DEMO-5.1~L09,Civil works,DEMO-V001,DEMO-5.1,Construction & installation,,,1,lot,5000000,EUR,1,5000000,Estimate,2026-09-15,Low,Buy
+DEMO-V001~DEMO-6.1~L10,Mechanical and electrical installation,DEMO-V001,DEMO-6.1,Construction & installation,,,1,lot,12000000,EUR,1,12000000,Estimate,2026-09-15,Low,Buy
+DEMO-V001~DEMO-7.1~L11,Product engineering hours,DEMO-V001,DEMO-7.1,Engineering hours,,,20000,h,100,EUR,1,2000000,Estimate,2026-09-15,Medium,Make
+DEMO-V001~DEMO-7.2~L12,Plant engineering hours,DEMO-V001,DEMO-7.2,Engineering hours,,,50000,h,110,EUR,1,5500000,Estimate,2026-09-15,Low,Buy
+DEMO-V001~DEMO-8.1~L13,Project management and commissioning,DEMO-V001,DEMO-8.1,Services & commissioning,,,1,lot,4000000,EUR,1,4000000,Estimate,2026-09-15,Low,Buy
+DEMO-V001~DEMO-8.1~L14,Contingency,DEMO-V001,DEMO-8.1,Indirects & contingency,,,1,lot,6000000,EUR,1,6000000,Estimate,2026-09-15,Low,Buy
+DEMO-V002~DEMO-1.1~100001,Cell stack,DEMO-V002,DEMO-1.1,Material,100001,S-001,5,pc,3800000,EUR,1,19000000,Teamcenter,2026-11-01,High,Make
+DEMO-V002~DEMO-1.2~100002,Module frame and piping,DEMO-V002,DEMO-1.2,Material,100002,S-002,5,pc,1000000,EUR,1,5000000,Teamcenter,2026-11-01,High,Buy
+DEMO-V002~DEMO-1.2~L03,Module assembly,DEMO-V002,DEMO-1.2,Manufacturing & assembly,,,5,pc,400000,EUR,1,2000000,Estimate,2026-11-01,Medium,Make
+DEMO-V002~DEMO-2.1~100010,Separators and electrolyte system,DEMO-V002,DEMO-2.1,Material,100010,S-003,1,lot,6000000,EUR,1,6000000,Teamcenter,2026-11-01,Medium,Buy
+DEMO-V002~DEMO-2.2~100020,Purification and drying unit,DEMO-V002,DEMO-2.2,Material,100020,S-004,1,lot,4200000,EUR,1,4200000,Supplier quote,2026-11-01,Medium,Buy
+DEMO-V002~DEMO-3.1~100030,Transformer-rectifier set,DEMO-V002,DEMO-3.1,Material,100030,S-005,1,lot,13200000,USD,0.9,11880000.0,Supplier quote,2026-11-01,Medium,Buy
+DEMO-V002~DEMO-4.1~100040,Cooling and water treatment package,DEMO-V002,DEMO-4.1,Material,100040,S-006,1,lot,5000000,EUR,1,5000000,Teamcenter,2026-11-01,Medium,Buy
+DEMO-V002~DEMO-5.1~L08,Building materials,DEMO-V002,DEMO-5.1,Material,,,1,lot,3000000,EUR,1,3000000,Estimate,2026-11-01,Low,Buy
+DEMO-V002~DEMO-5.1~L09,Civil works,DEMO-V002,DEMO-5.1,Construction & installation,,,1,lot,5000000,EUR,1,5000000,Estimate,2026-11-01,Low,Buy
+DEMO-V002~DEMO-6.1~L10,Mechanical and electrical installation,DEMO-V002,DEMO-6.1,Construction & installation,,,1,lot,12000000,EUR,1,12000000,Estimate,2026-11-01,Low,Buy
+DEMO-V002~DEMO-7.1~L11,Product engineering hours,DEMO-V002,DEMO-7.1,Engineering hours,,,18000,h,100,EUR,1,1800000,Estimate,2026-11-01,Medium,Make
+DEMO-V002~DEMO-7.2~L12,Plant engineering hours,DEMO-V002,DEMO-7.2,Engineering hours,,,50000,h,110,EUR,1,5500000,Estimate,2026-11-01,Low,Buy
+DEMO-V002~DEMO-8.1~L13,Project management and commissioning,DEMO-V002,DEMO-8.1,Services & commissioning,,,1,lot,4000000,EUR,1,4000000,Estimate,2026-11-01,Low,Buy
+DEMO-V002~DEMO-8.1~L14,Contingency,DEMO-V002,DEMO-8.1,Indirects & contingency,,,1,lot,6000000,EUR,1,6000000,Estimate,2026-11-01,Low,Buy

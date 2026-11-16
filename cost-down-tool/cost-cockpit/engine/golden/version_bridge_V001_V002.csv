@@ -1,0 +1,12 @@
+cbs,name,old,new,delta
+DEMO-1.1,Cell stacks,20000000.0,19000000.0,-1000000.0
+DEMO-1.2,"Module frames, piping and assembly",7000000.0,7000000.0,0.0
+DEMO-2.1,Gas-liquid separation and electrolyte system,6000000.0,6000000.0,0.0
+DEMO-2.2,Gas purification and drying,4000000.0,4200000.0,200000.0
+DEMO-3.1,Transformers and rectifiers,11880000.0,11880000.0,0.0
+DEMO-4.1,Cooling and water treatment,5000000.0,5000000.0,0.0
+DEMO-5.1,Foundations and buildings,8000000.0,8000000.0,0.0
+DEMO-6.1,Mechanical and electrical installation,12000000.0,12000000.0,0.0
+DEMO-7.1,Product engineering,2000000.0,1800000.0,-200000.0
+DEMO-7.2,Plant engineering,5500000.0,5500000.0,0.0
+DEMO-8.1,"Project management, commissioning and contingency",10000000.0,10000000.0,0.0

@@ -1,0 +1,4 @@
+cdt_code,cdt_name,cdt_Product@cdt_code,cdt_CostVersion@cdt_code,cdt_Region@cdt_code,cdt_sizemw,cdt_escalationfactor,cdt_status,cdt_calcrequested,cdt_publishrequested
+SCN-100-DE,100 MW Germany (reference),DEMO,DEMO-V001,DE,100,1,Draft,No,No
+SCN-200-ES,200 MW Spain outdoor with redundant rectifier,DEMO,DEMO-V001,ES,200,1,Draft,No,No
+SCN-20-IN,20 MW India,DEMO,DEMO-V001,IN,20,1,Draft,No,No

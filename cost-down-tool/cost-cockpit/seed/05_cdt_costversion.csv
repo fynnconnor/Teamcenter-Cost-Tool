@@ -1,0 +1,3 @@
+cdt_code,cdt_name,cdt_Product@cdt_code,cdt_BasedOn@cdt_code,cdt_versionnumber,cdt_status,cdt_releasedon,cdt_isbaseline,cdt_priceyear,cdt_releaserequested,cdt_comment
+DEMO-V001,Demo baseline V001,DEMO,,1,Released,2026-10-01,Yes,2026,No,Synthetic baseline
+DEMO-V002,Demo working version V002,DEMO,DEMO-V001,2,Draft,,No,2026,No,Synthetic draft with three changes against V001

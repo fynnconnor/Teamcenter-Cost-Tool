@@ -1,0 +1,15 @@
+item,cbs,cost_type,amount,share,cumulative_share
+Cell stack,DEMO-1.1,Material,20000000.0,0.2189,0.2189
+Mechanical and electrical installation,DEMO-6.1,Construction & installation,12000000.0,0.1313,0.3502
+Transformer-rectifier set,DEMO-3.1,Material,11880000.0,0.13,0.4802
+Separators and electrolyte system,DEMO-2.1,Material,6000000.0,0.0657,0.5459
+Contingency,DEMO-8.1,Indirects & contingency,6000000.0,0.0657,0.6115
+Plant engineering hours,DEMO-7.2,Engineering hours,5500000.0,0.0602,0.6717
+Module frame and piping,DEMO-1.2,Material,5000000.0,0.0547,0.7264
+Cooling and water treatment package,DEMO-4.1,Material,5000000.0,0.0547,0.7811
+Civil works,DEMO-5.1,Construction & installation,5000000.0,0.0547,0.8359
+Purification and drying unit,DEMO-2.2,Material,4000000.0,0.0438,0.8796
+Project management and commissioning,DEMO-8.1,Services & commissioning,4000000.0,0.0438,0.9234
+Building materials,DEMO-5.1,Material,3000000.0,0.0328,0.9562
+Module assembly,DEMO-1.2,Manufacturing & assembly,2000000.0,0.0219,0.9781
+Product engineering hours,DEMO-7.1,Engineering hours,2000000.0,0.0219,1.0

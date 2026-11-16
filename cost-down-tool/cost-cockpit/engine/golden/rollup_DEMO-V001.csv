@@ -1,0 +1,20 @@
+cbs,name,level,amount_eur,eur_per_kw
+DEMO-1,Electrolyser modules,1,27000000.0,270.0
+DEMO-1.1,Cell stacks,2,20000000.0,200.0
+DEMO-1.2,"Module frames, piping and assembly",2,7000000.0,70.0
+DEMO-2,Process balance of plant,1,10000000.0,100.0
+DEMO-2.1,Gas-liquid separation and electrolyte system,2,6000000.0,60.0
+DEMO-2.2,Gas purification and drying,2,4000000.0,40.0
+DEMO-3,Power supply,1,11880000.0,118.8
+DEMO-3.1,Transformers and rectifiers,2,11880000.0,118.8
+DEMO-4,Utilities,1,5000000.0,50.0
+DEMO-4.1,Cooling and water treatment,2,5000000.0,50.0
+DEMO-5,Civil and buildings,1,8000000.0,80.0
+DEMO-5.1,Foundations and buildings,2,8000000.0,80.0
+DEMO-6,Installation,1,12000000.0,120.0
+DEMO-6.1,Mechanical and electrical installation,2,12000000.0,120.0
+DEMO-7,Engineering,1,7500000.0,75.0
+DEMO-7.1,Product engineering,2,2000000.0,20.0
+DEMO-7.2,Plant engineering,2,5500000.0,55.0
+DEMO-8,Indirects and contingency,1,10000000.0,100.0
+DEMO-8.1,"Project management, commissioning and contingency",2,10000000.0,100.0

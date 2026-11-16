@@ -1,0 +1,9 @@
+cbs,name,current_per_kw,target_per_kw,gap_per_kw,weighted_measures_per_kw,open_gap_per_kw
+DEMO-1,Electrolyser modules,270.0,230.0,40.0,8.4,31.6
+DEMO-2,Process balance of plant,100.0,90.0,10.0,2.5,7.5
+DEMO-3,Power supply,118.8,100.0,18.8,0.0,18.8
+DEMO-4,Utilities,50.0,45.0,5.0,0.0,5.0
+DEMO-5,Civil and buildings,80.0,70.0,10.0,12.8,-2.8
+DEMO-6,Installation,120.0,100.0,20.0,0.0,20.0
+DEMO-7,Engineering,75.0,65.0,10.0,0.0,10.0
+DEMO-8,Indirects and contingency,100.0,90.0,10.0,0.0,10.0

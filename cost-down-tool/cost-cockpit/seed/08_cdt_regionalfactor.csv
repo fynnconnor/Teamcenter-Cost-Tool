@@ -1,0 +1,36 @@
+cdt_code,cdt_name,cdt_Region@cdt_code,cdt_costtype,cdt_factor,cdt_source,cdt_validfrom
+DE~1,DE - Material,DE,Material,1,Base region,2026-01-01
+DE~2,DE - Engineering hours,DE,Engineering hours,1,Base region,2026-01-01
+DE~3,DE - Manufacturing & assembly,DE,Manufacturing & assembly,1,Base region,2026-01-01
+DE~4,DE - Logistics,DE,Logistics,1,Base region,2026-01-01
+DE~5,DE - Construction & installation,DE,Construction & installation,1,Base region,2026-01-01
+DE~6,DE - Services & commissioning,DE,Services & commissioning,1,Base region,2026-01-01
+DE~7,DE - Indirects & contingency,DE,Indirects & contingency,1,Base region,2026-01-01
+ES~1,ES - Material,ES,Material,1.0,Illustrative placeholder,2026-01-01
+ES~2,ES - Engineering hours,ES,Engineering hours,0.9,Illustrative placeholder,2026-01-01
+ES~3,ES - Manufacturing & assembly,ES,Manufacturing & assembly,1.0,Illustrative placeholder,2026-01-01
+ES~4,ES - Logistics,ES,Logistics,1.0,Illustrative placeholder,2026-01-01
+ES~5,ES - Construction & installation,ES,Construction & installation,0.85,Illustrative placeholder,2026-01-01
+ES~6,ES - Services & commissioning,ES,Services & commissioning,0.9,Illustrative placeholder,2026-01-01
+ES~7,ES - Indirects & contingency,ES,Indirects & contingency,1.0,Illustrative placeholder,2026-01-01
+US~1,US - Material,US,Material,1.05,Illustrative placeholder,2026-01-01
+US~2,US - Engineering hours,US,Engineering hours,1.2,Illustrative placeholder,2026-01-01
+US~3,US - Manufacturing & assembly,US,Manufacturing & assembly,1.0,Illustrative placeholder,2026-01-01
+US~4,US - Logistics,US,Logistics,1.1,Illustrative placeholder,2026-01-01
+US~5,US - Construction & installation,US,Construction & installation,1.15,Illustrative placeholder,2026-01-01
+US~6,US - Services & commissioning,US,Services & commissioning,1.15,Illustrative placeholder,2026-01-01
+US~7,US - Indirects & contingency,US,Indirects & contingency,1.1,Illustrative placeholder,2026-01-01
+IN~1,IN - Material,IN,Material,0.9,Illustrative placeholder,2026-01-01
+IN~2,IN - Engineering hours,IN,Engineering hours,0.5,Illustrative placeholder,2026-01-01
+IN~3,IN - Manufacturing & assembly,IN,Manufacturing & assembly,1.0,Illustrative placeholder,2026-01-01
+IN~4,IN - Logistics,IN,Logistics,1.2,Illustrative placeholder,2026-01-01
+IN~5,IN - Construction & installation,IN,Construction & installation,0.55,Illustrative placeholder,2026-01-01
+IN~6,IN - Services & commissioning,IN,Services & commissioning,0.6,Illustrative placeholder,2026-01-01
+IN~7,IN - Indirects & contingency,IN,Indirects & contingency,0.9,Illustrative placeholder,2026-01-01
+SA~1,SA - Material,SA,Material,1.0,Illustrative placeholder,2026-01-01
+SA~2,SA - Engineering hours,SA,Engineering hours,0.9,Illustrative placeholder,2026-01-01
+SA~3,SA - Manufacturing & assembly,SA,Manufacturing & assembly,1.0,Illustrative placeholder,2026-01-01
+SA~4,SA - Logistics,SA,Logistics,1.15,Illustrative placeholder,2026-01-01
+SA~5,SA - Construction & installation,SA,Construction & installation,0.75,Illustrative placeholder,2026-01-01
+SA~6,SA - Services & commissioning,SA,Services & commissioning,0.9,Illustrative placeholder,2026-01-01
+SA~7,SA - Indirects & contingency,SA,Indirects & contingency,1.05,Illustrative placeholder,2026-01-01

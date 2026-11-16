@@ -1,0 +1,4 @@
+cdt_code,cdt_name,cdt_Feature@cdt_code,cdt_CBSElement@cdt_code,cdt_impacttype,cdt_value,cdt_costtype,cdt_comment
+F-OUTDOOR~DEMO-5.1,Outdoor installation on civil and buildings,F-OUTDOOR,DEMO-5.1,Percent of element (%),-40,Construction & installation,Synthetic
+F-REDUNDANT~DEMO-3.1,Redundant rectifier on power supply,F-REDUNDANT,DEMO-3.1,Amount per MW (EUR/MW),15000,Material,Synthetic
+F-COMPRESSION~DEMO-2.2,Compression on purification,F-COMPRESSION,DEMO-2.2,Fixed amount (EUR),1500000,Material,Synthetic

@@ -1,0 +1,20 @@
+cdt_code,cdt_name,cdt_Product@cdt_code,cdt_Parent@cdt_code,cdt_level,cdt_scope,cdt_ticcategory,cdt_scalingmethod,cdt_scalingexponent,cdt_isleaf,cdt_sortorder
+DEMO-1,Electrolyser modules,DEMO,,1,,Electrolyser modules,,,No,100
+DEMO-1.1,Cell stacks,DEMO,DEMO-1,2,NCA scope,Electrolyser modules,Per module,,Yes,110
+DEMO-1.2,"Module frames, piping and assembly",DEMO,DEMO-1,2,NCA scope,Electrolyser modules,Per module,,Yes,120
+DEMO-2,Process balance of plant,DEMO,,1,,Process balance of plant,,,No,200
+DEMO-2.1,Gas-liquid separation and electrolyte system,DEMO,DEMO-2,2,NCA scope,Process balance of plant,Power law,0.7,Yes,210
+DEMO-2.2,Gas purification and drying,DEMO,DEMO-2,2,EPC scope,Process balance of plant,Power law,0.65,Yes,220
+DEMO-3,Power supply,DEMO,,1,,Power supply & electrical,,,No,300
+DEMO-3.1,Transformers and rectifiers,DEMO,DEMO-3,2,NCA scope,Power supply & electrical,Power law,0.85,Yes,310
+DEMO-4,Utilities,DEMO,,1,,Utilities,,,No,400
+DEMO-4.1,Cooling and water treatment,DEMO,DEMO-4,2,EPC scope,Utilities,Power law,0.6,Yes,410
+DEMO-5,Civil and buildings,DEMO,,1,,Civil & buildings,,,No,500
+DEMO-5.1,Foundations and buildings,DEMO,DEMO-5,2,EPC scope,Civil & buildings,Power law,0.7,Yes,510
+DEMO-6,Installation,DEMO,,1,,Installation & construction,,,No,600
+DEMO-6.1,Mechanical and electrical installation,DEMO,DEMO-6,2,EPC scope,Installation & construction,Power law,0.8,Yes,610
+DEMO-7,Engineering,DEMO,,1,,Engineering & project management,,,No,700
+DEMO-7.1,Product engineering,DEMO,DEMO-7,2,NCA scope,Engineering & project management,Fixed,,Yes,710
+DEMO-7.2,Plant engineering,DEMO,DEMO-7,2,EPC scope,Engineering & project management,Power law,0.4,Yes,720
+DEMO-8,Indirects and contingency,DEMO,,1,,"Indirects, commissioning & contingency",,,No,800
+DEMO-8.1,"Project management, commissioning and contingency",DEMO,DEMO-8,2,EPC scope,"Indirects, commissioning & contingency",Power law,0.8,Yes,810

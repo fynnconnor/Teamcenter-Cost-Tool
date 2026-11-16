@@ -1,0 +1,45 @@
+scenario,cbs,cost_type,line_type,feature,scope,tic,base_amount,scaling_code,exponent,size_ratio,module_ratio,regional_factor,escalation_factor,size_mw,scale_factor,final_cost,cost_per_kw
+SCN-100-DE,DEMO-1.1,Material,Base cost,,NCA scope,Electrolyser modules,20000000.0,1,,1.0,1.0,1.0,1.0,100.0,1.0,20000000.0,200.0
+SCN-100-DE,DEMO-1.2,Manufacturing & assembly,Base cost,,NCA scope,Electrolyser modules,2000000.0,1,,1.0,1.0,1.0,1.0,100.0,1.0,2000000.0,20.0
+SCN-100-DE,DEMO-1.2,Material,Base cost,,NCA scope,Electrolyser modules,5000000.0,1,,1.0,1.0,1.0,1.0,100.0,1.0,5000000.0,50.0
+SCN-100-DE,DEMO-2.1,Material,Base cost,,NCA scope,Process balance of plant,6000000.0,2,0.7,1.0,1.0,1.0,1.0,100.0,1.0,6000000.0,60.0
+SCN-100-DE,DEMO-2.2,Material,Base cost,,EPC scope,Process balance of plant,4000000.0,2,0.65,1.0,1.0,1.0,1.0,100.0,1.0,4000000.0,40.0
+SCN-100-DE,DEMO-3.1,Material,Base cost,,NCA scope,Power supply & electrical,11880000.0,2,0.85,1.0,1.0,1.0,1.0,100.0,1.0,11880000.0,118.8
+SCN-100-DE,DEMO-4.1,Material,Base cost,,EPC scope,Utilities,5000000.0,2,0.6,1.0,1.0,1.0,1.0,100.0,1.0,5000000.0,50.0
+SCN-100-DE,DEMO-5.1,Construction & installation,Base cost,,EPC scope,Civil & buildings,5000000.0,2,0.7,1.0,1.0,1.0,1.0,100.0,1.0,5000000.0,50.0
+SCN-100-DE,DEMO-5.1,Material,Base cost,,EPC scope,Civil & buildings,3000000.0,2,0.7,1.0,1.0,1.0,1.0,100.0,1.0,3000000.0,30.0
+SCN-100-DE,DEMO-6.1,Construction & installation,Base cost,,EPC scope,Installation & construction,12000000.0,2,0.8,1.0,1.0,1.0,1.0,100.0,1.0,12000000.0,120.0
+SCN-100-DE,DEMO-7.1,Engineering hours,Base cost,,NCA scope,Engineering & project management,2000000.0,3,,1.0,1.0,1.0,1.0,100.0,1.0,2000000.0,20.0
+SCN-100-DE,DEMO-7.2,Engineering hours,Base cost,,EPC scope,Engineering & project management,5500000.0,2,0.4,1.0,1.0,1.0,1.0,100.0,1.0,5500000.0,55.0
+SCN-100-DE,DEMO-8.1,Indirects & contingency,Base cost,,EPC scope,"Indirects, commissioning & contingency",6000000.0,2,0.8,1.0,1.0,1.0,1.0,100.0,1.0,6000000.0,60.0
+SCN-100-DE,DEMO-8.1,Services & commissioning,Base cost,,EPC scope,"Indirects, commissioning & contingency",4000000.0,2,0.8,1.0,1.0,1.0,1.0,100.0,1.0,4000000.0,40.0
+SCN-200-ES,DEMO-1.1,Material,Base cost,,NCA scope,Electrolyser modules,20000000.0,1,,2.0,2.0,1.0,1.0,200.0,2.0,40000000.0,200.0
+SCN-200-ES,DEMO-1.2,Manufacturing & assembly,Base cost,,NCA scope,Electrolyser modules,2000000.0,1,,2.0,2.0,1.0,1.0,200.0,2.0,4000000.0,20.0
+SCN-200-ES,DEMO-1.2,Material,Base cost,,NCA scope,Electrolyser modules,5000000.0,1,,2.0,2.0,1.0,1.0,200.0,2.0,10000000.0,50.0
+SCN-200-ES,DEMO-2.1,Material,Base cost,,NCA scope,Process balance of plant,6000000.0,2,0.7,2.0,2.0,1.0,1.0,200.0,1.6245,9747028.7563,48.7351
+SCN-200-ES,DEMO-2.2,Material,Base cost,,EPC scope,Process balance of plant,4000000.0,2,0.65,2.0,2.0,1.0,1.0,200.0,1.5692,6276672.7832,31.3834
+SCN-200-ES,DEMO-3.1,Material,Base cost,,NCA scope,Power supply & electrical,11880000.0,2,0.85,2.0,2.0,1.0,1.0,200.0,1.8025,21413710.9916,107.0686
+SCN-200-ES,DEMO-4.1,Material,Base cost,,EPC scope,Utilities,5000000.0,2,0.6,2.0,2.0,1.0,1.0,200.0,1.5157,7578582.8326,37.8929
+SCN-200-ES,DEMO-5.1,Construction & installation,Base cost,,EPC scope,Civil & buildings,5000000.0,2,0.7,2.0,2.0,0.85,1.0,200.0,1.6245,6904145.369,34.5207
+SCN-200-ES,DEMO-5.1,Material,Base cost,,EPC scope,Civil & buildings,3000000.0,2,0.7,2.0,2.0,1.0,1.0,200.0,1.6245,4873514.3781,24.3676
+SCN-200-ES,DEMO-6.1,Construction & installation,Base cost,,EPC scope,Installation & construction,12000000.0,2,0.8,2.0,2.0,0.85,1.0,200.0,1.7411,17759231.4912,88.7962
+SCN-200-ES,DEMO-7.1,Engineering hours,Base cost,,NCA scope,Engineering & project management,2000000.0,3,,2.0,2.0,0.9,1.0,200.0,1.0,1800000.0,9.0
+SCN-200-ES,DEMO-7.2,Engineering hours,Base cost,,EPC scope,Engineering & project management,5500000.0,2,0.4,2.0,2.0,0.9,1.0,200.0,1.3195,6531564.1583,32.6578
+SCN-200-ES,DEMO-8.1,Indirects & contingency,Base cost,,EPC scope,"Indirects, commissioning & contingency",6000000.0,2,0.8,2.0,2.0,1.0,1.0,200.0,1.7411,10446606.7596,52.233
+SCN-200-ES,DEMO-8.1,Services & commissioning,Base cost,,EPC scope,"Indirects, commissioning & contingency",4000000.0,2,0.8,2.0,2.0,0.9,1.0,200.0,1.7411,6267964.0557,31.3398
+SCN-200-ES,DEMO-5.1,Construction & installation,Feature effect,F-OUTDOOR,EPC scope,Civil & buildings,-3200000.0,2,0.7,2.0,2.0,0.85,1.0,200.0,1.6245,-4418653.0362,-22.0933
+SCN-200-ES,DEMO-3.1,Material,Feature effect,F-REDUNDANT,NCA scope,Power supply & electrical,1500000.0,2,1.0,2.0,2.0,1.0,1.0,200.0,2.0,3000000.0,15.0
+SCN-20-IN,DEMO-1.1,Material,Base cost,,NCA scope,Electrolyser modules,20000000.0,1,,0.2,0.2,0.9,1.0,20.0,0.2,3600000.0,180.0
+SCN-20-IN,DEMO-1.2,Manufacturing & assembly,Base cost,,NCA scope,Electrolyser modules,2000000.0,1,,0.2,0.2,1.0,1.0,20.0,0.2,400000.0,20.0
+SCN-20-IN,DEMO-1.2,Material,Base cost,,NCA scope,Electrolyser modules,5000000.0,1,,0.2,0.2,0.9,1.0,20.0,0.2,900000.0,45.0
+SCN-20-IN,DEMO-2.1,Material,Base cost,,NCA scope,Process balance of plant,6000000.0,2,0.7,0.2,0.2,0.9,1.0,20.0,0.3241,1750309.1244,87.5155
+SCN-20-IN,DEMO-2.2,Material,Base cost,,EPC scope,Process balance of plant,4000000.0,2,0.65,0.2,0.2,0.9,1.0,20.0,0.3513,1264654.8036,63.2327
+SCN-20-IN,DEMO-3.1,Material,Base cost,,NCA scope,Power supply & electrical,11880000.0,2,0.85,0.2,0.2,0.9,1.0,20.0,0.2546,2722290.3671,136.1145
+SCN-20-IN,DEMO-4.1,Material,Base cost,,EPC scope,Utilities,5000000.0,2,0.6,0.2,0.2,0.9,1.0,20.0,0.3807,1713288.5448,85.6644
+SCN-20-IN,DEMO-5.1,Construction & installation,Base cost,,EPC scope,Civil & buildings,5000000.0,2,0.7,0.2,0.2,0.55,1.0,20.0,0.3241,891361.1282,44.5681
+SCN-20-IN,DEMO-5.1,Material,Base cost,,EPC scope,Civil & buildings,3000000.0,2,0.7,0.2,0.2,0.9,1.0,20.0,0.3241,875154.5622,43.7577
+SCN-20-IN,DEMO-6.1,Construction & installation,Base cost,,EPC scope,Installation & construction,12000000.0,2,0.8,0.2,0.2,0.55,1.0,20.0,0.2759,1821243.1531,91.0622
+SCN-20-IN,DEMO-7.1,Engineering hours,Base cost,,NCA scope,Engineering & project management,2000000.0,3,,0.2,0.2,0.5,1.0,20.0,1.0,1000000.0,50.0
+SCN-20-IN,DEMO-7.2,Engineering hours,Base cost,,EPC scope,Engineering & project management,5500000.0,2,0.4,0.2,0.2,0.5,1.0,20.0,0.5253,1444590.2924,72.2295
+SCN-20-IN,DEMO-8.1,Indirects & contingency,Base cost,,EPC scope,"Indirects, commissioning & contingency",6000000.0,2,0.8,0.2,0.2,0.9,1.0,20.0,0.2759,1490108.0344,74.5054
+SCN-20-IN,DEMO-8.1,Services & commissioning,Base cost,,EPC scope,"Indirects, commissioning & contingency",4000000.0,2,0.8,0.2,0.2,0.6,1.0,20.0,0.2759,662270.2375,33.1135

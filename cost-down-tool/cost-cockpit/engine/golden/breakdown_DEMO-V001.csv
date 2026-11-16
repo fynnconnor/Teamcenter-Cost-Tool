@@ -1,0 +1,17 @@
+dimension,label,amount_eur
+scope,EPC scope,44500000.0
+scope,NCA scope,46880000.0
+cost_type,Construction & installation,17000000.0
+cost_type,Engineering hours,7500000.0
+cost_type,Indirects & contingency,6000000.0
+cost_type,Manufacturing & assembly,2000000.0
+cost_type,Material,54880000.0
+cost_type,Services & commissioning,4000000.0
+tic,Civil & buildings,8000000.0
+tic,Electrolyser modules,27000000.0
+tic,Engineering & project management,7500000.0
+tic,"Indirects, commissioning & contingency",10000000.0
+tic,Installation & construction,12000000.0
+tic,Power supply & electrical,11880000.0
+tic,Process balance of plant,10000000.0
+tic,Utilities,5000000.0

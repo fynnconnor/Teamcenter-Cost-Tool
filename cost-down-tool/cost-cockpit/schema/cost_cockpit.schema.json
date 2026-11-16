@@ -1,0 +1,2535 @@
+{
+ "comment": "Single source of truth for the Cost Cockpit data model. Used by scripts/provision_dataverse.py, the browser-console script and the data dictionary.",
+ "language_code": 1033,
+ "publisher": {
+  "uniquename": "costdowntool",
+  "friendlyname": "Cost-down tool",
+  "prefix": "cdt",
+  "optionvalueprefix": 71000
+ },
+ "solution": {
+  "uniquename": "CostCockpit",
+  "friendlyname": "Cost Cockpit",
+  "version": "1.0.0.0"
+ },
+ "choices": {
+  "cdt_scope": {
+   "label": "Scope",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "NCA scope"
+    },
+    {
+     "value": 710000002,
+     "label": "EPC scope"
+    },
+    {
+     "value": 710000003,
+     "label": "Owner / other"
+    }
+   ]
+  },
+  "cdt_costtype": {
+   "label": "Cost type",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Material"
+    },
+    {
+     "value": 710000002,
+     "label": "Engineering hours"
+    },
+    {
+     "value": 710000003,
+     "label": "Manufacturing & assembly"
+    },
+    {
+     "value": 710000004,
+     "label": "Logistics"
+    },
+    {
+     "value": 710000005,
+     "label": "Construction & installation"
+    },
+    {
+     "value": 710000006,
+     "label": "Services & commissioning"
+    },
+    {
+     "value": 710000007,
+     "label": "Indirects & contingency"
+    }
+   ]
+  },
+  "cdt_ticcategory": {
+   "label": "TIC category",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Electrolyser modules"
+    },
+    {
+     "value": 710000002,
+     "label": "Process balance of plant"
+    },
+    {
+     "value": 710000003,
+     "label": "Power supply & electrical"
+    },
+    {
+     "value": 710000004,
+     "label": "Utilities"
+    },
+    {
+     "value": 710000005,
+     "label": "Civil & buildings"
+    },
+    {
+     "value": 710000006,
+     "label": "Installation & construction"
+    },
+    {
+     "value": 710000007,
+     "label": "Engineering & project management"
+    },
+    {
+     "value": 710000008,
+     "label": "Indirects, commissioning & contingency"
+    }
+   ]
+  },
+  "cdt_scalingmethod": {
+   "label": "Scaling method",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Per module"
+    },
+    {
+     "value": 710000002,
+     "label": "Power law"
+    },
+    {
+     "value": 710000003,
+     "label": "Fixed"
+    }
+   ]
+  },
+  "cdt_versionstatus": {
+   "label": "Version status",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Draft"
+    },
+    {
+     "value": 710000002,
+     "label": "Released"
+    },
+    {
+     "value": 710000003,
+     "label": "Archived"
+    }
+   ]
+  },
+  "cdt_pricesource": {
+   "label": "Price source",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Teamcenter"
+    },
+    {
+     "value": 710000002,
+     "label": "ERP"
+    },
+    {
+     "value": 710000003,
+     "label": "Supplier quote"
+    },
+    {
+     "value": 710000004,
+     "label": "Estimate"
+    },
+    {
+     "value": 710000005,
+     "label": "Benchmark"
+    }
+   ]
+  },
+  "cdt_confidence": {
+   "label": "Confidence",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "High"
+    },
+    {
+     "value": 710000002,
+     "label": "Medium"
+    },
+    {
+     "value": 710000003,
+     "label": "Low"
+    }
+   ]
+  },
+  "cdt_makebuy": {
+   "label": "Make or buy",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Make"
+    },
+    {
+     "value": 710000002,
+     "label": "Buy"
+    }
+   ]
+  },
+  "cdt_impacttype": {
+   "label": "Impact type",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Fixed amount (EUR)"
+    },
+    {
+     "value": 710000002,
+     "label": "Amount per MW (EUR/MW)"
+    },
+    {
+     "value": 710000003,
+     "label": "Percent of element (%)"
+    }
+   ]
+  },
+  "cdt_scenariostatus": {
+   "label": "Scenario status",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Draft"
+    },
+    {
+     "value": 710000002,
+     "label": "Calculated"
+    },
+    {
+     "value": 710000003,
+     "label": "Published"
+    }
+   ]
+  },
+  "cdt_linetype": {
+   "label": "Line type",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Base cost"
+    },
+    {
+     "value": 710000002,
+     "label": "Feature effect"
+    }
+   ]
+  },
+  "cdt_targetbasis": {
+   "label": "Target basis",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Benchmark"
+    },
+    {
+     "value": 710000002,
+     "label": "Top-down from LCOH"
+    },
+    {
+     "value": 710000003,
+     "label": "Bottom-up estimate"
+    },
+    {
+     "value": 710000004,
+     "label": "Management target"
+    }
+   ]
+  },
+  "cdt_ideastatus": {
+   "label": "Idea status",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "New"
+    },
+    {
+     "value": 710000002,
+     "label": "In evaluation"
+    },
+    {
+     "value": 710000003,
+     "label": "Accepted"
+    },
+    {
+     "value": 710000004,
+     "label": "Rejected"
+    },
+    {
+     "value": 710000005,
+     "label": "Converted to measure"
+    }
+   ]
+  },
+  "cdt_ideaeffort": {
+   "label": "Idea effort",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Small"
+    },
+    {
+     "value": 710000002,
+     "label": "Medium"
+    },
+    {
+     "value": 710000003,
+     "label": "Large"
+    }
+   ]
+  },
+  "cdt_ideacategory": {
+   "label": "Idea category",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Design"
+    },
+    {
+     "value": 710000002,
+     "label": "Procurement"
+    },
+    {
+     "value": 710000003,
+     "label": "Manufacturing"
+    },
+    {
+     "value": 710000004,
+     "label": "Scope / EPC interface"
+    },
+    {
+     "value": 710000005,
+     "label": "Standardisation"
+    },
+    {
+     "value": 710000006,
+     "label": "Other"
+    }
+   ]
+  },
+  "cdt_dilevel": {
+   "label": "Degree of implementation",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "DI1 Idea"
+    },
+    {
+     "value": 710000002,
+     "label": "DI2 Evaluated"
+    },
+    {
+     "value": 710000003,
+     "label": "DI3 Decided"
+    },
+    {
+     "value": 710000004,
+     "label": "DI4 Implemented"
+    },
+    {
+     "value": 710000005,
+     "label": "DI5 Effective in cost version"
+    }
+   ]
+  },
+  "cdt_measurestatus": {
+   "label": "Measure status",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "Open"
+    },
+    {
+     "value": 710000002,
+     "label": "On hold"
+    },
+    {
+     "value": 710000003,
+     "label": "Done"
+    },
+    {
+     "value": 710000004,
+     "label": "Cancelled"
+    }
+   ]
+  },
+  "cdt_importstatus": {
+   "label": "Import status",
+   "options": [
+    {
+     "value": 710000001,
+     "label": "New"
+    },
+    {
+     "value": 710000002,
+     "label": "Mapped"
+    },
+    {
+     "value": 710000003,
+     "label": "Loaded"
+    },
+    {
+     "value": 710000004,
+     "label": "Error"
+    }
+   ]
+  }
+ },
+ "tables": [
+  {
+   "schema": "cdt_Product",
+   "display": "Product",
+   "plural": "Products",
+   "description": "Product or plant configuration whose cost is monitored.",
+   "serves": [
+    "R1"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 30,
+     "required": true,
+     "description": "Short unique code, e.g. DEMO. Used as key for imports."
+    },
+    {
+     "schema": "cdt_Description",
+     "type": "memo",
+     "display": "Description",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ReferenceSizeMW",
+     "type": "decimal",
+     "display": "Reference size (MW)",
+     "precision": 2,
+     "min": 0,
+     "max": 100000,
+     "required": true,
+     "description": "Project size the cost baseline refers to."
+    },
+    {
+     "schema": "cdt_ModuleSizeMW",
+     "type": "decimal",
+     "display": "Module size (MW)",
+     "precision": 2,
+     "min": 0,
+     "max": 100000,
+     "required": true,
+     "description": "Size of one product module; used by the per-module scaling rule."
+    },
+    {
+     "schema": "cdt_Technology",
+     "type": "text",
+     "display": "Technology",
+     "maxlen": 100,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Active",
+     "type": "bool",
+     "display": "Active",
+     "default": true,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [],
+   "keys": [
+    {
+     "schema": "cdt_ProductCodeKey",
+     "display": "Product code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_CBSElement",
+   "display": "CBS Element",
+   "plural": "CBS Elements",
+   "description": "Node of the cost breakdown structure. Carries scope, TIC category and the scaling rule.",
+   "serves": [
+    "R1",
+    "R2",
+    "R7"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 50,
+     "required": true,
+     "description": "Unique code incl. product prefix, e.g. DEMO-2.1. No / : ? & characters."
+    },
+    {
+     "schema": "cdt_Level",
+     "type": "int",
+     "display": "Level",
+     "min": 1,
+     "max": 10,
+     "required": true,
+     "description": "1 = top level."
+    },
+    {
+     "schema": "cdt_Scope",
+     "type": "choice",
+     "display": "Scope",
+     "choice": "cdt_scope",
+     "required": false,
+     "description": "NCA scope, EPC scope or owner. Set on leaf elements."
+    },
+    {
+     "schema": "cdt_TICCategory",
+     "type": "choice",
+     "display": "TIC category",
+     "choice": "cdt_ticcategory",
+     "required": false,
+     "description": "Category for total-installed-cost reporting."
+    },
+    {
+     "schema": "cdt_ScalingMethod",
+     "type": "choice",
+     "display": "Scaling method",
+     "choice": "cdt_scalingmethod",
+     "required": false,
+     "description": "How the cost of this element changes with project size."
+    },
+    {
+     "schema": "cdt_ScalingExponent",
+     "type": "decimal",
+     "display": "Scaling exponent",
+     "precision": 3,
+     "min": 0,
+     "max": 2,
+     "required": false,
+     "description": "Exponent n of the power law; only used with scaling method 'Power law'."
+    },
+    {
+     "schema": "cdt_IsLeaf",
+     "type": "bool",
+     "display": "Is leaf",
+     "default": true,
+     "required": false,
+     "description": "Cost items may only be booked on leaf elements."
+    },
+    {
+     "schema": "cdt_SortOrder",
+     "type": "int",
+     "display": "Sort order",
+     "min": 0,
+     "max": 100000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Responsible",
+     "type": "text",
+     "display": "Responsible",
+     "maxlen": 100,
+     "required": false,
+     "description": "Name of the person responsible for this cost element."
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Product",
+     "display": "Product",
+     "target": "cdt_product",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    },
+    {
+     "schema": "cdt_Parent",
+     "display": "Parent element",
+     "target": "cdt_cbselement",
+     "required": false,
+     "delete": "Restrict",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_CBSCodeKey",
+     "display": "CBS code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_Supplier",
+   "display": "Supplier",
+   "plural": "Suppliers",
+   "description": "Supplier master, fed from Teamcenter.",
+   "serves": [
+    "R5"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_TeamcenterID",
+     "type": "text",
+     "display": "Teamcenter ID",
+     "maxlen": 60,
+     "required": true,
+     "description": "Vendor ID in Teamcenter."
+    },
+    {
+     "schema": "cdt_Country",
+     "type": "text",
+     "display": "Country",
+     "maxlen": 60,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [],
+   "keys": [
+    {
+     "schema": "cdt_SupplierTcKey",
+     "display": "Supplier Teamcenter ID",
+     "columns": [
+      "cdt_teamcenterid"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_FXRate",
+   "display": "FX Rate",
+   "plural": "FX Rates",
+   "description": "Exchange rate to EUR per currency; copied onto cost items at import.",
+   "serves": [
+    "R1"
+   ],
+   "ownership": "OrganizationOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Currency code",
+    "maxlen": 10
+   },
+   "columns": [
+    {
+     "schema": "cdt_RateToEUR",
+     "type": "decimal",
+     "display": "Rate to EUR",
+     "precision": 6,
+     "min": 0,
+     "max": 1000000,
+     "required": true,
+     "description": "1 unit of the currency = x EUR."
+    },
+    {
+     "schema": "cdt_ValidFrom",
+     "type": "date",
+     "display": "Valid from",
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [],
+   "keys": [
+    {
+     "schema": "cdt_FXRateNameKey",
+     "display": "Currency code",
+     "columns": [
+      "cdt_name"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_CostVersion",
+   "display": "Cost Version",
+   "plural": "Cost Versions",
+   "description": "Version of the cost baseline of a product. Draft versions are edited, released versions are frozen.",
+   "serves": [
+    "R6"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 50,
+     "required": true,
+     "description": "Unique code, e.g. DEMO-V001."
+    },
+    {
+     "schema": "cdt_VersionNumber",
+     "type": "int",
+     "display": "Version number",
+     "min": 0,
+     "max": 100000,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Status",
+     "type": "choice",
+     "display": "Status",
+     "choice": "cdt_versionstatus",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ReleasedOn",
+     "type": "date",
+     "display": "Released on",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_IsBaseline",
+     "type": "bool",
+     "display": "Is baseline",
+     "default": false,
+     "required": false,
+     "description": "Marks the version that targets and measures refer to."
+    },
+    {
+     "schema": "cdt_PriceYear",
+     "type": "int",
+     "display": "Price year",
+     "min": 2000,
+     "max": 2100,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ReleaseRequested",
+     "type": "bool",
+     "display": "Release requested",
+     "default": false,
+     "required": false,
+     "description": "Set to Yes to start the release flow."
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Product",
+     "display": "Product",
+     "target": "cdt_product",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    },
+    {
+     "schema": "cdt_BasedOn",
+     "display": "Based on version",
+     "target": "cdt_costversion",
+     "required": false,
+     "delete": "RemoveLink",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_VersionCodeKey",
+     "display": "Version code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_CostItem",
+   "display": "Cost Item",
+   "plural": "Cost Items",
+   "description": "Lowest cost level: one priced item, hour block or lump sum within a cost version.",
+   "serves": [
+    "R1",
+    "R2",
+    "R4",
+    "R5"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Description",
+    "maxlen": 300
+   },
+   "columns": [
+    {
+     "schema": "cdt_ImportKey",
+     "type": "text",
+     "display": "Import key",
+     "maxlen": 200,
+     "required": true,
+     "description": "Unique key: version code + '~' + CBS code + '~' + item id. Used for upsert."
+    },
+    {
+     "schema": "cdt_CostType",
+     "type": "choice",
+     "display": "Cost type",
+     "choice": "cdt_costtype",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_TeamcenterItemID",
+     "type": "text",
+     "display": "Teamcenter item ID",
+     "maxlen": 100,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_TeamcenterRevision",
+     "type": "text",
+     "display": "Teamcenter revision",
+     "maxlen": 20,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Quantity",
+     "type": "decimal",
+     "display": "Quantity",
+     "precision": 4,
+     "min": -1000000000,
+     "max": 1000000000,
+     "required": true,
+     "description": "Pieces, hours, lots ..."
+    },
+    {
+     "schema": "cdt_Unit",
+     "type": "text",
+     "display": "Unit",
+     "maxlen": 20,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_UnitPrice",
+     "type": "decimal",
+     "display": "Unit price",
+     "precision": 4,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": true,
+     "description": "In the currency given by currency code."
+    },
+    {
+     "schema": "cdt_CurrencyCode",
+     "type": "text",
+     "display": "Currency code",
+     "maxlen": 3,
+     "required": false,
+     "description": "ISO code, e.g. EUR."
+    },
+    {
+     "schema": "cdt_FXRate",
+     "type": "decimal",
+     "display": "FX rate to EUR",
+     "precision": 6,
+     "min": 0,
+     "max": 1000000,
+     "required": false,
+     "description": "Copied from the FX rate table at import. Blank is treated as 1."
+    },
+    {
+     "schema": "cdt_AmountEUR",
+     "type": "decimal",
+     "display": "Amount (EUR)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": "Quantity x unit price x FX rate. Written by import and by the flow 'Cost item - set amount'."
+    },
+    {
+     "schema": "cdt_PriceSource",
+     "type": "choice",
+     "display": "Price source",
+     "choice": "cdt_pricesource",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_PriceDate",
+     "type": "date",
+     "display": "Price date",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Confidence",
+     "type": "choice",
+     "display": "Confidence",
+     "choice": "cdt_confidence",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_MakeBuy",
+     "type": "choice",
+     "display": "Make or buy",
+     "choice": "cdt_makebuy",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_CostVersion",
+     "display": "Cost version",
+     "target": "cdt_costversion",
+     "required": true,
+     "delete": "Cascade",
+     "description": ""
+    },
+    {
+     "schema": "cdt_CBSElement",
+     "display": "CBS element",
+     "target": "cdt_cbselement",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    },
+    {
+     "schema": "cdt_Supplier",
+     "display": "Supplier",
+     "target": "cdt_supplier",
+     "required": false,
+     "delete": "RemoveLink",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_CostItemImportKey",
+     "display": "Cost item import key",
+     "columns": [
+      "cdt_importkey"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_Feature",
+   "display": "Feature",
+   "plural": "Features",
+   "description": "Product feature or design option whose cost effect is tracked.",
+   "serves": [
+    "R3"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 50,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Description",
+     "type": "memo",
+     "display": "Description",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Category",
+     "type": "text",
+     "display": "Category",
+     "maxlen": 100,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_IsStandard",
+     "type": "bool",
+     "display": "Is standard",
+     "default": false,
+     "required": false,
+     "description": "Standard features are part of the baseline."
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Product",
+     "display": "Product",
+     "target": "cdt_product",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_FeatureCodeKey",
+     "display": "Feature code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_FeatureImpact",
+   "display": "Feature Impact",
+   "plural": "Feature Impacts",
+   "description": "Effect of a feature on one CBS element: the feature-to-TIC dependency.",
+   "serves": [
+    "R3"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 100,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ImpactType",
+     "type": "choice",
+     "display": "Impact type",
+     "choice": "cdt_impacttype",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Value",
+     "type": "decimal",
+     "display": "Value",
+     "precision": 4,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": true,
+     "description": "EUR, EUR per MW or percent, depending on impact type. Negative values are savings."
+    },
+    {
+     "schema": "cdt_CostType",
+     "type": "choice",
+     "display": "Cost type",
+     "choice": "cdt_costtype",
+     "required": true,
+     "description": "Cost type of the effect; decides which regional factor applies."
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Feature",
+     "display": "Feature",
+     "target": "cdt_feature",
+     "required": true,
+     "delete": "Cascade",
+     "description": ""
+    },
+    {
+     "schema": "cdt_CBSElement",
+     "display": "CBS element",
+     "target": "cdt_cbselement",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_FeatureImpactCodeKey",
+     "display": "Feature impact code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_Region",
+   "display": "Region",
+   "plural": "Regions",
+   "description": "Project location for regional cost factors.",
+   "serves": [
+    "R8"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 30,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Country",
+     "type": "text",
+     "display": "Country",
+     "maxlen": 60,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [],
+   "keys": [
+    {
+     "schema": "cdt_RegionCodeKey",
+     "display": "Region code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_RegionalFactor",
+   "display": "Regional Factor",
+   "plural": "Regional Factors",
+   "description": "Cost factor of a region for one cost type, relative to the base region (1.0).",
+   "serves": [
+    "R8"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 60,
+     "required": true,
+     "description": "Region code + '~' + cost type number."
+    },
+    {
+     "schema": "cdt_CostType",
+     "type": "choice",
+     "display": "Cost type",
+     "choice": "cdt_costtype",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Factor",
+     "type": "decimal",
+     "display": "Factor",
+     "precision": 3,
+     "min": 0,
+     "max": 100,
+     "required": true,
+     "description": "1.000 = same cost as base region."
+    },
+    {
+     "schema": "cdt_Source",
+     "type": "text",
+     "display": "Source",
+     "maxlen": 300,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ValidFrom",
+     "type": "date",
+     "display": "Valid from",
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Region",
+     "display": "Region",
+     "target": "cdt_region",
+     "required": true,
+     "delete": "Cascade",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_RegionalFactorCodeKey",
+     "display": "Regional factor code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_Scenario",
+   "display": "Scenario",
+   "plural": "Scenarios",
+   "description": "What-if case: a cost version calculated for a project size, a region and a set of features.",
+   "serves": [
+    "R7",
+    "R8",
+    "R13"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 50,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_SizeMW",
+     "type": "decimal",
+     "display": "Project size (MW)",
+     "precision": 2,
+     "min": 0,
+     "max": 100000,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ReferenceSizeMW",
+     "type": "decimal",
+     "display": "Reference size (MW)",
+     "precision": 2,
+     "min": 0,
+     "max": 100000,
+     "required": false,
+     "description": "Copied from the product by the calculation flow."
+    },
+    {
+     "schema": "cdt_ModuleSizeMW",
+     "type": "decimal",
+     "display": "Module size (MW)",
+     "precision": 2,
+     "min": 0,
+     "max": 100000,
+     "required": false,
+     "description": "Copied from the product by the calculation flow."
+    },
+    {
+     "schema": "cdt_EscalationFactor",
+     "type": "decimal",
+     "display": "Escalation factor",
+     "precision": 4,
+     "min": 0,
+     "max": 100,
+     "required": false,
+     "description": "Price-year adjustment; blank is treated as 1."
+    },
+    {
+     "schema": "cdt_Status",
+     "type": "choice",
+     "display": "Status",
+     "choice": "cdt_scenariostatus",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_CalcRequested",
+     "type": "bool",
+     "display": "Calculation requested",
+     "default": false,
+     "required": false,
+     "description": "Set to Yes to start the calculation flow."
+    },
+    {
+     "schema": "cdt_PublishRequested",
+     "type": "bool",
+     "display": "Publication requested",
+     "default": false,
+     "required": false,
+     "description": "Set to Yes to publish the CAPEX dataset for the LCOH Suite."
+    },
+    {
+     "schema": "cdt_CalculatedOn",
+     "type": "datetime",
+     "display": "Calculated on",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_TotalEUR",
+     "type": "decimal",
+     "display": "Total cost (EUR)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": "Written by the calculation flow."
+    },
+    {
+     "schema": "cdt_TotalPerKW",
+     "type": "decimal",
+     "display": "Total cost (EUR/kW)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": "Written by the calculation flow."
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Product",
+     "display": "Product",
+     "target": "cdt_product",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    },
+    {
+     "schema": "cdt_CostVersion",
+     "display": "Cost version",
+     "target": "cdt_costversion",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    },
+    {
+     "schema": "cdt_Region",
+     "display": "Region",
+     "target": "cdt_region",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_ScenarioCodeKey",
+     "display": "Scenario code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": [
+    {
+     "schema": "cdt_SizeRatio",
+     "display": "Size ratio",
+     "datatype": "Decimal",
+     "decimals": 6,
+     "formula": "If('Reference size (MW)' > 0, 'Project size (MW)' / 'Reference size (MW)', 0)",
+     "description": "Project size divided by reference size."
+    },
+    {
+     "schema": "cdt_ModuleRatio",
+     "display": "Module ratio",
+     "datatype": "Decimal",
+     "decimals": 6,
+     "formula": "If('Module size (MW)' > 0 && 'Reference size (MW)' > 0, RoundUp('Project size (MW)' / 'Module size (MW)', 0) / RoundUp('Reference size (MW)' / 'Module size (MW)', 0), 0)",
+     "description": "Number of modules at project size divided by number of modules at reference size."
+    }
+   ]
+  },
+  {
+   "schema": "cdt_ScenarioFeature",
+   "display": "Scenario Feature",
+   "plural": "Scenario Features",
+   "description": "Feature selected in a scenario.",
+   "serves": [
+    "R3",
+    "R7"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 120,
+     "required": true,
+     "description": "Scenario code + '~' + feature code."
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Scenario",
+     "display": "Scenario",
+     "target": "cdt_scenario",
+     "required": true,
+     "delete": "Cascade",
+     "description": ""
+    },
+    {
+     "schema": "cdt_Feature",
+     "display": "Feature",
+     "target": "cdt_feature",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_ScenarioFeatureCodeKey",
+     "display": "Scenario feature code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_ScenarioLine",
+   "display": "Scenario Line",
+   "plural": "Scenario Lines",
+   "description": "Result line of a scenario per CBS element and cost type. Inputs are written by the flow, results are formula columns.",
+   "serves": [
+    "R7",
+    "R8"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_LineType",
+     "type": "choice",
+     "display": "Line type",
+     "choice": "cdt_linetype",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_CostType",
+     "type": "choice",
+     "display": "Cost type",
+     "choice": "cdt_costtype",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Scope",
+     "type": "choice",
+     "display": "Scope",
+     "choice": "cdt_scope",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_TICCategory",
+     "type": "choice",
+     "display": "TIC category",
+     "choice": "cdt_ticcategory",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_BaseAmountEUR",
+     "type": "decimal",
+     "display": "Base amount (EUR)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": true,
+     "description": "Cost at reference size in the base region."
+    },
+    {
+     "schema": "cdt_ScalingCode",
+     "type": "int",
+     "display": "Scaling code",
+     "min": 1,
+     "max": 3,
+     "required": true,
+     "description": "1 = per module, 2 = power law, 3 = fixed."
+    },
+    {
+     "schema": "cdt_ScalingExponent",
+     "type": "decimal",
+     "display": "Scaling exponent",
+     "precision": 3,
+     "min": 0,
+     "max": 2,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_SizeRatio",
+     "type": "decimal",
+     "display": "Size ratio",
+     "precision": 6,
+     "min": 0,
+     "max": 100000,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ModuleRatio",
+     "type": "decimal",
+     "display": "Module ratio",
+     "precision": 6,
+     "min": 0,
+     "max": 100000,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_RegionalFactor",
+     "type": "decimal",
+     "display": "Regional factor",
+     "precision": 3,
+     "min": 0,
+     "max": 100,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_EscalationFactor",
+     "type": "decimal",
+     "display": "Escalation factor",
+     "precision": 4,
+     "min": 0,
+     "max": 100,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_SizeMW",
+     "type": "decimal",
+     "display": "Project size (MW)",
+     "precision": 2,
+     "min": 0,
+     "max": 100000,
+     "required": true,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Scenario",
+     "display": "Scenario",
+     "target": "cdt_scenario",
+     "required": true,
+     "delete": "Cascade",
+     "description": ""
+    },
+    {
+     "schema": "cdt_CBSElement",
+     "display": "CBS element",
+     "target": "cdt_cbselement",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    },
+    {
+     "schema": "cdt_Feature",
+     "display": "Feature",
+     "target": "cdt_feature",
+     "required": false,
+     "delete": "RemoveLink",
+     "description": ""
+    }
+   ],
+   "keys": [],
+   "formulas": [
+    {
+     "schema": "cdt_ScaleFactor",
+     "display": "Scale factor",
+     "datatype": "Float",
+     "decimals": 6,
+     "formula": "If('Scaling code' = 1, Float('Module ratio'), If('Scaling code' = 2, Power(Float('Size ratio'), Float('Scaling exponent')), Float(1)))",
+     "description": "Scaling rule applied to the base amount."
+    },
+    {
+     "schema": "cdt_FinalCostEUR",
+     "display": "Final cost (EUR)",
+     "datatype": "Float",
+     "decimals": 2,
+     "formula": "Float('Base amount (EUR)') * 'Scale factor' * Float('Regional factor') * Float('Escalation factor')",
+     "description": "Base amount x scale factor x regional factor x escalation factor."
+    },
+    {
+     "schema": "cdt_CostPerKW",
+     "display": "Cost per kW (EUR/kW)",
+     "datatype": "Float",
+     "decimals": 2,
+     "formula": "If('Project size (MW)' > 0, 'Final cost (EUR)' / (Float('Project size (MW)') * 1000), Float(0))",
+     "description": "Final cost divided by project size in kW."
+    }
+   ]
+  },
+  {
+   "schema": "cdt_CapexDataset",
+   "display": "CAPEX Dataset",
+   "plural": "CAPEX Datasets",
+   "description": "Published scenario result per scope and TIC category. This is the interface table the LCOH Suite reads.",
+   "serves": [
+    "R13"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_DatasetKey",
+     "type": "text",
+     "display": "Dataset key",
+     "maxlen": 200,
+     "required": true,
+     "description": "Scenario code + '~' + scope number + '~' + TIC category number."
+    },
+    {
+     "schema": "cdt_ProductCode",
+     "type": "text",
+     "display": "Product code",
+     "maxlen": 30,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_VersionCode",
+     "type": "text",
+     "display": "Version code",
+     "maxlen": 50,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_RegionCode",
+     "type": "text",
+     "display": "Region code",
+     "maxlen": 30,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_SizeMW",
+     "type": "decimal",
+     "display": "Project size (MW)",
+     "precision": 2,
+     "min": 0,
+     "max": 100000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Scope",
+     "type": "choice",
+     "display": "Scope",
+     "choice": "cdt_scope",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_TICCategory",
+     "type": "choice",
+     "display": "TIC category",
+     "choice": "cdt_ticcategory",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_CostEUR",
+     "type": "decimal",
+     "display": "Cost (EUR)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_CostPerKW",
+     "type": "decimal",
+     "display": "Cost (EUR/kW)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_PublishedOn",
+     "type": "datetime",
+     "display": "Published on",
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Scenario",
+     "display": "Scenario",
+     "target": "cdt_scenario",
+     "required": true,
+     "delete": "Cascade",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_CapexDatasetKey",
+     "display": "CAPEX dataset key",
+     "columns": [
+      "cdt_datasetkey"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_Benchmark",
+   "display": "Benchmark",
+   "plural": "Benchmarks",
+   "description": "Cost data point of an own product, a competitor or a public study.",
+   "serves": [
+    "R9"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 60,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Subject",
+     "type": "text",
+     "display": "Subject",
+     "maxlen": 200,
+     "required": true,
+     "description": "Product, competitor or study the value belongs to."
+    },
+    {
+     "schema": "cdt_IsOwn",
+     "type": "bool",
+     "display": "Own product",
+     "default": false,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Scope",
+     "type": "choice",
+     "display": "Scope",
+     "choice": "cdt_scope",
+     "required": false,
+     "description": "Scope the value covers, if known."
+    },
+    {
+     "schema": "cdt_TICCategory",
+     "type": "choice",
+     "display": "TIC category",
+     "choice": "cdt_ticcategory",
+     "required": false,
+     "description": "Leave blank for a total-plant value."
+    },
+    {
+     "schema": "cdt_ValueEURPerKW",
+     "type": "decimal",
+     "display": "Value (EUR/kW)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_PlantSizeMW",
+     "type": "decimal",
+     "display": "Plant size (MW)",
+     "precision": 2,
+     "min": 0,
+     "max": 100000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Year",
+     "type": "int",
+     "display": "Year",
+     "min": 2000,
+     "max": 2100,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Source",
+     "type": "text",
+     "display": "Source",
+     "maxlen": 300,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_SourceURL",
+     "type": "text",
+     "display": "Source URL",
+     "maxlen": 500,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Confidence",
+     "type": "choice",
+     "display": "Confidence",
+     "choice": "cdt_confidence",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": "State what is included and excluded."
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Region",
+     "display": "Region",
+     "target": "cdt_region",
+     "required": false,
+     "delete": "RemoveLink",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_BenchmarkCodeKey",
+     "display": "Benchmark code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_Target",
+   "display": "Target",
+   "plural": "Targets",
+   "description": "Target value per CBS element.",
+   "serves": [
+    "R10"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Name",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 80,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_TargetEURPerKW",
+     "type": "decimal",
+     "display": "Target (EUR/kW)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": true,
+     "description": "Target at reference size."
+    },
+    {
+     "schema": "cdt_TargetYear",
+     "type": "int",
+     "display": "Target year",
+     "min": 2000,
+     "max": 2100,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Basis",
+     "type": "choice",
+     "display": "Basis",
+     "choice": "cdt_targetbasis",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_CBSElement",
+     "display": "CBS element",
+     "target": "cdt_cbselement",
+     "required": true,
+     "delete": "Cascade",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_TargetCodeKey",
+     "display": "Target code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_Idea",
+   "display": "Idea",
+   "plural": "Ideas",
+   "description": "Cost-down idea submitted by a colleague.",
+   "serves": [
+    "R11"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Title",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Description",
+     "type": "memo",
+     "display": "Description",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_EstimatedSavingEUR",
+     "type": "decimal",
+     "display": "Estimated saving (EUR)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": "Per plant at reference size."
+    },
+    {
+     "schema": "cdt_Effort",
+     "type": "choice",
+     "display": "Effort",
+     "choice": "cdt_ideaeffort",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Category",
+     "type": "choice",
+     "display": "Category",
+     "choice": "cdt_ideacategory",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Status",
+     "type": "choice",
+     "display": "Status",
+     "choice": "cdt_ideastatus",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_SubmitterName",
+     "type": "text",
+     "display": "Submitter",
+     "maxlen": 100,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_EvaluationNote",
+     "type": "memo",
+     "display": "Evaluation note",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Product",
+     "display": "Product",
+     "target": "cdt_product",
+     "required": false,
+     "delete": "RemoveLink",
+     "description": ""
+    },
+    {
+     "schema": "cdt_CBSElement",
+     "display": "CBS element",
+     "target": "cdt_cbselement",
+     "required": false,
+     "delete": "RemoveLink",
+     "description": ""
+    }
+   ],
+   "keys": [],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_Measure",
+   "display": "Measure",
+   "plural": "Measures",
+   "description": "Cost-down measure with owner, saving, effort and degree of implementation.",
+   "serves": [
+    "R12"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Title",
+    "maxlen": 200
+   },
+   "columns": [
+    {
+     "schema": "cdt_Code",
+     "type": "text",
+     "display": "Code",
+     "maxlen": 60,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_SavingEUR",
+     "type": "decimal",
+     "display": "Saving (EUR)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": true,
+     "description": "Per plant at reference size."
+    },
+    {
+     "schema": "cdt_OneOffCostEUR",
+     "type": "decimal",
+     "display": "One-off cost (EUR)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_EffortPD",
+     "type": "decimal",
+     "display": "Effort (person-days)",
+     "precision": 1,
+     "min": 0,
+     "max": 100000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_DayRateEUR",
+     "type": "decimal",
+     "display": "Day rate (EUR)",
+     "precision": 2,
+     "min": 0,
+     "max": 100000,
+     "required": false,
+     "description": "Cost per person-day used for the score; blank is treated as 800."
+    },
+    {
+     "schema": "cdt_Probability",
+     "type": "int",
+     "display": "Probability (%)",
+     "min": 0,
+     "max": 100,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_DILevel",
+     "type": "choice",
+     "display": "Degree of implementation",
+     "choice": "cdt_dilevel",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_DueDate",
+     "type": "date",
+     "display": "Due date",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Status",
+     "type": "choice",
+     "display": "Status",
+     "choice": "cdt_measurestatus",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_RealisedSavingEUR",
+     "type": "decimal",
+     "display": "Realised saving (EUR)",
+     "precision": 2,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_Idea",
+     "display": "Idea",
+     "target": "cdt_idea",
+     "required": false,
+     "delete": "RemoveLink",
+     "description": ""
+    },
+    {
+     "schema": "cdt_Product",
+     "display": "Product",
+     "target": "cdt_product",
+     "required": false,
+     "delete": "RemoveLink",
+     "description": ""
+    },
+    {
+     "schema": "cdt_CBSElement",
+     "display": "CBS element",
+     "target": "cdt_cbselement",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    },
+    {
+     "schema": "cdt_TargetVersion",
+     "display": "Target version",
+     "target": "cdt_costversion",
+     "required": false,
+     "delete": "RemoveLink",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_MeasureCodeKey",
+     "display": "Measure code",
+     "columns": [
+      "cdt_code"
+     ]
+    }
+   ],
+   "formulas": [
+    {
+     "schema": "cdt_WeightedSavingEUR",
+     "display": "Weighted saving (EUR)",
+     "datatype": "Decimal",
+     "decimals": 2,
+     "formula": "'Saving (EUR)' * 'Probability (%)' / 100",
+     "description": "Saving weighted with the probability."
+    },
+    {
+     "schema": "cdt_PriorityScore",
+     "display": "Priority score",
+     "datatype": "Decimal",
+     "decimals": 2,
+     "formula": "If(('One-off cost (EUR)' + 'Effort (person-days)' * If(IsBlank('Day rate (EUR)'), 800, 'Day rate (EUR)')) > 0, 'Saving (EUR)' * 'Probability (%)' / 100 / ('One-off cost (EUR)' + 'Effort (person-days)' * If(IsBlank('Day rate (EUR)'), 800, 'Day rate (EUR)')), 0)",
+     "description": "Weighted saving per EUR of implementation cost."
+    }
+   ]
+  },
+  {
+   "schema": "cdt_TCMapping",
+   "display": "Teamcenter Mapping",
+   "plural": "Teamcenter Mappings",
+   "description": "Remembers which CBS element and cost type a Teamcenter item belongs to, so that re-imports are mapped automatically.",
+   "serves": [
+    "R5"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Teamcenter item ID",
+    "maxlen": 100
+   },
+   "columns": [
+    {
+     "schema": "cdt_CostType",
+     "type": "choice",
+     "display": "Cost type",
+     "choice": "cdt_costtype",
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Comment",
+     "type": "memo",
+     "display": "Comment",
+     "maxlen": 4000,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [
+    {
+     "schema": "cdt_CBSElement",
+     "display": "CBS element",
+     "target": "cdt_cbselement",
+     "required": true,
+     "delete": "Restrict",
+     "description": ""
+    }
+   ],
+   "keys": [
+    {
+     "schema": "cdt_TCMappingItemKey",
+     "display": "Teamcenter item ID",
+     "columns": [
+      "cdt_name"
+     ]
+    }
+   ],
+   "formulas": []
+  },
+  {
+   "schema": "cdt_TCImportRow",
+   "display": "Teamcenter Import Row",
+   "plural": "Teamcenter Import Rows",
+   "description": "Staging table for rows exported from Teamcenter before they become cost items.",
+   "serves": [
+    "R5"
+   ],
+   "ownership": "UserOwned",
+   "primary": {
+    "schema": "cdt_Name",
+    "display": "Row key",
+    "maxlen": 250
+   },
+   "columns": [
+    {
+     "schema": "cdt_ImportRun",
+     "type": "text",
+     "display": "Import run",
+     "maxlen": 60,
+     "required": true,
+     "description": "Identifier of the import, e.g. 2026-11-16 or the export file name."
+    },
+    {
+     "schema": "cdt_VersionCode",
+     "type": "text",
+     "display": "Target version code",
+     "maxlen": 50,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ItemID",
+     "type": "text",
+     "display": "Item ID",
+     "maxlen": 100,
+     "required": true,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Revision",
+     "type": "text",
+     "display": "Revision",
+     "maxlen": 20,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ItemName",
+     "type": "text",
+     "display": "Item name",
+     "maxlen": 300,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_ParentItemID",
+     "type": "text",
+     "display": "Parent item ID",
+     "maxlen": 100,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_BOMLevel",
+     "type": "int",
+     "display": "BOM level",
+     "min": 0,
+     "max": 100,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Quantity",
+     "type": "decimal",
+     "display": "Quantity",
+     "precision": 4,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Unit",
+     "type": "text",
+     "display": "Unit",
+     "maxlen": 20,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_UnitPrice",
+     "type": "decimal",
+     "display": "Unit price",
+     "precision": 4,
+     "min": -100000000000,
+     "max": 100000000000,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_CurrencyCode",
+     "type": "text",
+     "display": "Currency code",
+     "maxlen": 3,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_SupplierID",
+     "type": "text",
+     "display": "Supplier ID",
+     "maxlen": 60,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_SupplierName",
+     "type": "text",
+     "display": "Supplier name",
+     "maxlen": 200,
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_PriceDate",
+     "type": "date",
+     "display": "Price date",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_CBSCode",
+     "type": "text",
+     "display": "CBS code",
+     "maxlen": 50,
+     "required": false,
+     "description": "Filled from the mapping table or by hand."
+    },
+    {
+     "schema": "cdt_CostType",
+     "type": "choice",
+     "display": "Cost type",
+     "choice": "cdt_costtype",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Status",
+     "type": "choice",
+     "display": "Status",
+     "choice": "cdt_importstatus",
+     "required": false,
+     "description": ""
+    },
+    {
+     "schema": "cdt_Message",
+     "type": "text",
+     "display": "Message",
+     "maxlen": 500,
+     "required": false,
+     "description": ""
+    }
+   ],
+   "lookups": [],
+   "keys": [
+    {
+     "schema": "cdt_TCImportRowKey",
+     "display": "Import row key",
+     "columns": [
+      "cdt_name"
+     ]
+    }
+   ],
+   "formulas": []
+  }
+ ]
+}

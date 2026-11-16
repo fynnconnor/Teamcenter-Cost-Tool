@@ -1,0 +1,9 @@
+cdt_code,cdt_name,cdt_CBSElement@cdt_code,cdt_targeteurperkw,cdt_targetyear,cdt_basis,cdt_comment
+T-DEMO-1,Target electrolyser modules,DEMO-1,230,2028,Management target,Synthetic
+T-DEMO-2,Target process balance of plant,DEMO-2,90,2028,Benchmark,Synthetic
+T-DEMO-3,Target power supply,DEMO-3,100,2028,Benchmark,Synthetic
+T-DEMO-4,Target utilities,DEMO-4,45,2028,Bottom-up estimate,Synthetic
+T-DEMO-5,Target civil and buildings,DEMO-5,70,2028,Bottom-up estimate,Synthetic
+T-DEMO-6,Target installation,DEMO-6,100,2028,Benchmark,Synthetic
+T-DEMO-7,Target engineering,DEMO-7,65,2028,Management target,Synthetic
+T-DEMO-8,Target indirects and contingency,DEMO-8,90,2028,Top-down from LCOH,Synthetic

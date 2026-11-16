@@ -1,0 +1,761 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Teamcenter services (Cost Cockpit)",
+    "version": "0.1",
+    "description": "Starting template for a Power Platform custom connector to the Teamcenter JSON services (SOA over JSON). Service names and payloads follow the pattern /tc/JsonRestServices/<Service>/<operation>. Verify every operation against the service documentation generated for the installed Teamcenter release before use; payloads differ between releases and customisations."
+  },
+  "host": "teamcenter.example.internal:8080",
+  "basePath": "/tc/JsonRestServices",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/Core-2011-06-Session/login": {
+      "post": {
+        "operationId": "Login",
+        "summary": "Log in",
+        "description": "Opens a Teamcenter session. The session id is returned in the Set-Cookie response header (JSESSIONID).",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "header",
+                "body"
+              ],
+              "properties": {
+                "header": {
+                  "type": "object",
+                  "description": "Service header. Send empty state and policy objects.",
+                  "properties": {
+                    "state": {
+                      "type": "object"
+                    },
+                    "policy": {
+                      "type": "object"
+                    }
+                  },
+                  "default": {
+                    "state": {},
+                    "policy": {}
+                  }
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {
+                    "credentials": {
+                      "type": "object",
+                      "required": [
+                        "user",
+                        "password"
+                      ],
+                      "properties": {
+                        "user": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string",
+                          "format": "password",
+                          "x-ms-visibility": "important"
+                        },
+                        "group": {
+                          "type": "string",
+                          "default": ""
+                        },
+                        "role": {
+                          "type": "string",
+                          "default": ""
+                        },
+                        "locale": {
+                          "type": "string",
+                          "default": ""
+                        },
+                        "descrimator": {
+                          "type": "string",
+                          "default": "",
+                          "description": "Session discriminator; the misspelling is part of the service."
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "credentials"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service response. Partial errors are reported inside the body (ServiceData.partialErrors).",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/Core-2007-01-Session/getTCSessionInfo": {
+      "post": {
+        "operationId": "GetSessionInfo",
+        "summary": "Get session info",
+        "description": "Returns user, group and role of the current session. Use it to test the cookie.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Session cookie",
+            "description": "JSESSIONID=<value> taken from the Set-Cookie header of the Login response."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "header",
+                "body"
+              ],
+              "properties": {
+                "header": {
+                  "type": "object",
+                  "description": "Service header. Send empty state and policy objects.",
+                  "properties": {
+                    "state": {
+                      "type": "object"
+                    },
+                    "policy": {
+                      "type": "object"
+                    }
+                  },
+                  "default": {
+                    "state": {},
+                    "policy": {}
+                  }
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service response. Partial errors are reported inside the body (ServiceData.partialErrors).",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/Core-2007-01-DataManagement/getItemFromId": {
+      "post": {
+        "operationId": "GetItemFromId",
+        "summary": "Get item by ID",
+        "description": "Finds items and revisions by item ID.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Session cookie",
+            "description": "JSESSIONID=<value> taken from the Set-Cookie header of the Login response."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "header",
+                "body"
+              ],
+              "properties": {
+                "header": {
+                  "type": "object",
+                  "description": "Service header. Send empty state and policy objects.",
+                  "properties": {
+                    "state": {
+                      "type": "object"
+                    },
+                    "policy": {
+                      "type": "object"
+                    }
+                  },
+                  "default": {
+                    "state": {},
+                    "policy": {}
+                  }
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {
+                    "infos": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "itemId": {
+                            "type": "string"
+                          },
+                          "revIds": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "nRev": {
+                      "type": "integer",
+                      "default": 1
+                    },
+                    "pref": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "infos"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service response. Partial errors are reported inside the body (ServiceData.partialErrors).",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/Core-2006-03-DataManagement/getProperties": {
+      "post": {
+        "operationId": "GetProperties",
+        "summary": "Get properties",
+        "description": "Reads property values of objects, for example price and supplier attributes of an item revision.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Session cookie",
+            "description": "JSESSIONID=<value> taken from the Set-Cookie header of the Login response."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "header",
+                "body"
+              ],
+              "properties": {
+                "header": {
+                  "type": "object",
+                  "description": "Service header. Send empty state and policy objects.",
+                  "properties": {
+                    "state": {
+                      "type": "object"
+                    },
+                    "policy": {
+                      "type": "object"
+                    }
+                  },
+                  "default": {
+                    "state": {},
+                    "policy": {}
+                  }
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {
+                    "objects": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "uid": {
+                            "type": "string"
+                          },
+                          "className": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Internal property names, e.g. object_name, item_id and the site-specific price and vendor attributes."
+                    }
+                  },
+                  "required": [
+                    "objects",
+                    "attributes"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service response. Partial errors are reported inside the body (ServiceData.partialErrors).",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/Query-2010-04-SavedQuery/findSavedQueries": {
+      "post": {
+        "operationId": "FindSavedQueries",
+        "summary": "Find saved queries",
+        "description": "Finds saved queries by name. A saved query that returns priced items is the simplest way to select what to import.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Session cookie",
+            "description": "JSESSIONID=<value> taken from the Set-Cookie header of the Login response."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "header",
+                "body"
+              ],
+              "properties": {
+                "header": {
+                  "type": "object",
+                  "description": "Service header. Send empty state and policy objects.",
+                  "properties": {
+                    "state": {
+                      "type": "object"
+                    },
+                    "policy": {
+                      "type": "object"
+                    }
+                  },
+                  "default": {
+                    "state": {},
+                    "policy": {}
+                  }
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {
+                    "inputCriteria": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "queryNames": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "queryDescs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "queryType": {
+                            "type": "integer",
+                            "default": 0
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service response. Partial errors are reported inside the body (ServiceData.partialErrors).",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/Cad-2007-01-StructureManagement/createBOMWindows": {
+      "post": {
+        "operationId": "CreateBOMWindows",
+        "summary": "Create BOM window",
+        "description": "Opens a BOM window for an item with a revision rule. Returns the top BOM line.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Session cookie",
+            "description": "JSESSIONID=<value> taken from the Set-Cookie header of the Login response."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "header",
+                "body"
+              ],
+              "properties": {
+                "header": {
+                  "type": "object",
+                  "description": "Service header. Send empty state and policy objects.",
+                  "properties": {
+                    "state": {
+                      "type": "object"
+                    },
+                    "policy": {
+                      "type": "object"
+                    }
+                  },
+                  "default": {
+                    "state": {},
+                    "policy": {}
+                  }
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {
+                    "info": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "clientId": {
+                            "type": "string",
+                            "default": ""
+                          },
+                          "item": {
+                            "type": "string",
+                            "description": "UID of the item"
+                          },
+                          "revRuleConfigInfo": {
+                            "type": "object",
+                            "properties": {
+                              "clientId": {
+                                "type": "string",
+                                "default": ""
+                              },
+                              "revRule": {
+                                "type": "string",
+                                "description": "UID of the revision rule"
+                              },
+                              "props": {
+                                "type": "object",
+                                "properties": {
+                                  "unitNo": {
+                                    "type": "integer"
+                                  },
+                                  "date": {
+                                    "type": "string"
+                                  },
+                                  "today": {
+                                    "type": "boolean"
+                                  },
+                                  "endItem": {
+                                    "type": "string"
+                                  },
+                                  "endItemRevision": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "info"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service response. Partial errors are reported inside the body (ServiceData.partialErrors).",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/Cad-2007-01-StructureManagement/expandPSOneLevel": {
+      "post": {
+        "operationId": "ExpandPSOneLevel",
+        "summary": "Expand BOM one level",
+        "description": "Returns the child BOM lines of the given parent lines. This operation was not verified against a running system; confirm name and payload in the service documentation of your release.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Session cookie",
+            "description": "JSESSIONID=<value> taken from the Set-Cookie header of the Login response."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "header",
+                "body"
+              ],
+              "properties": {
+                "header": {
+                  "type": "object",
+                  "description": "Service header. Send empty state and policy objects.",
+                  "properties": {
+                    "state": {
+                      "type": "object"
+                    },
+                    "policy": {
+                      "type": "object"
+                    }
+                  },
+                  "default": {
+                    "state": {},
+                    "policy": {}
+                  }
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {
+                    "input": {
+                      "type": "object",
+                      "properties": {
+                        "parentBomLines": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "description": "UID of a BOM line"
+                          }
+                        },
+                        "excludeFilter": {
+                          "type": "string",
+                          "default": "None"
+                        }
+                      }
+                    },
+                    "pref": {
+                      "type": "object",
+                      "properties": {
+                        "expItemRev": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "info": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service response. Partial errors are reported inside the body (ServiceData.partialErrors).",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/Cad-2007-01-StructureManagement/closeBOMWindows": {
+      "post": {
+        "operationId": "CloseBOMWindows",
+        "summary": "Close BOM windows",
+        "description": "Closes BOM windows opened by Create BOM window.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Session cookie",
+            "description": "JSESSIONID=<value> taken from the Set-Cookie header of the Login response."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "header",
+                "body"
+              ],
+              "properties": {
+                "header": {
+                  "type": "object",
+                  "description": "Service header. Send empty state and policy objects.",
+                  "properties": {
+                    "state": {
+                      "type": "object"
+                    },
+                    "policy": {
+                      "type": "object"
+                    }
+                  },
+                  "default": {
+                    "state": {},
+                    "policy": {}
+                  }
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {
+                    "bomWindows": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "description": "UID of a BOM window"
+                      }
+                    }
+                  },
+                  "required": [
+                    "bomWindows"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service response. Partial errors are reported inside the body (ServiceData.partialErrors).",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {},
+  "security": [],
+  "x-ms-connector-metadata": [
+    {
+      "propertyName": "Website",
+      "propertyValue": "https://www.siemens.com/teamcenter"
+    },
+    {
+      "propertyName": "Categories",
+      "propertyValue": "Engineering"
+    }
+  ]
+}

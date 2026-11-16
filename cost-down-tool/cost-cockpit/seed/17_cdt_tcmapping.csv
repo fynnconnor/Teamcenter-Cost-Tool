@@ -1,0 +1,7 @@
+cdt_name,cdt_CBSElement@cdt_code,cdt_costtype,cdt_comment
+100001,DEMO-1.1,Material,Cell stack
+100002,DEMO-1.2,Material,Module frame and piping
+100010,DEMO-2.1,Material,Separators and electrolyte system
+100020,DEMO-2.2,Material,Purification and drying unit
+100030,DEMO-3.1,Material,Transformer-rectifier set
+100040,DEMO-4.1,Material,Cooling and water treatment package

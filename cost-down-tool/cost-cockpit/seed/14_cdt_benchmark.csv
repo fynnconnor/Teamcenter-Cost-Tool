@@ -1,0 +1,4 @@
+cdt_code,cdt_name,cdt_subject,cdt_isown,cdt_scope,cdt_ticcategory,cdt_valueeurperkw,cdt_plantsizemw,cdt_year,cdt_source,cdt_sourceurl,cdt_confidence,cdt_comment
+B-OWN-DEMO,Demo product total at reference size,Demo electrolysis plant,Yes,,,913.8,100,2026,Cost Cockpit demo baseline V001,,Low,Synthetic value from the demo data
+B-ISPT-2020-ALK,ISPT 1 GW alkaline baseline design,Public study: ISPT Gigawatt green hydrogen plant,No,,,1400,1000,2020,ISPT public report 2020,https://ispt.eu/media/ISPT-public-report-gigawatt-green-hydrogen-plant.pdf,Medium,Total installed cost of a 1 GW plant as reported; check scope and price year before comparing
+B-ISPT-2022-ADV,ISPT 1 GW advanced design,Public study: ISPT advanced green electrolyser design,No,,,730,1000,2022,ISPT public report 2022,https://ispt.eu/media/Public-report-gigawatt-advanced-green-electrolyser-design.pdf,Low,Design target for a future plant as reported; technology and year basis to be checked

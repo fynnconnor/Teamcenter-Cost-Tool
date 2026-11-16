@@ -1,0 +1,161 @@
+# Idea Box screen - Power Apps source code (pa.yaml, schema v3).
+# Paste via tree view > right-click > Paste code. Classic controls, no version pinned (latest is used).
+# Add the data sources Ideas, Products and 'CBS Elements' before pasting.
+# Not validated in Power Apps Studio: if a control is rejected, build it from the table in idea-box.md.
+Screens:
+  scrIdeaBox:
+    Properties:
+      Fill: =RGBA(245, 247, 247, 1)
+    Children:
+      - lblHeader:
+          Control: Label
+          Properties:
+            Text: ="Submit a cost-down idea"
+            X: =40
+            Y: =24
+            Width: =620
+            Height: =48
+            Size: =22
+            FontWeight: =FontWeight.Bold
+            Color: =RGBA(14, 77, 91, 1)
+      - txtTitle:
+          Control: Classic/TextInput
+          Properties:
+            Default: =""
+            HintText: ="Short title (required)"
+            X: =40
+            Y: =88
+            Width: =620
+            Height: =44
+      - txtDescription:
+          Control: Classic/TextInput
+          Properties:
+            Default: =""
+            HintText: ="What should change, and why does it save cost?"
+            Mode: =TextMode.MultiLine
+            X: =40
+            Y: =144
+            Width: =620
+            Height: =140
+      - cmbProduct:
+          Control: Classic/ComboBox
+          Properties:
+            Items: =Products
+            DisplayFields: =["cdt_name"]
+            SearchFields: =["cdt_name"]
+            SelectMultiple: =false
+            InputTextPlaceholder: ="Product"
+            X: =40
+            Y: =296
+            Width: =300
+            Height: =44
+      - cmbCBS:
+          Control: Classic/ComboBox
+          Properties:
+            Items: =Filter('CBS Elements', Product.Product = cmbProduct.Selected.Product)
+            DisplayFields: =["cdt_name"]
+            SearchFields: =["cdt_name"]
+            SelectMultiple: =false
+            InputTextPlaceholder: ="Cost element (optional)"
+            X: =360
+            Y: =296
+            Width: =300
+            Height: =44
+      - txtSaving:
+          Control: Classic/TextInput
+          Properties:
+            Default: =""
+            Format: =TextFormat.Number
+            HintText: ="Estimated saving per plant in EUR (optional)"
+            X: =40
+            Y: =352
+            Width: =300
+            Height: =44
+      - drpEffort:
+          Control: Classic/DropDown
+          Properties:
+            Items: =Choices('Idea effort')
+            X: =360
+            Y: =352
+            Width: =140
+            Height: =44
+      - drpCategory:
+          Control: Classic/DropDown
+          Properties:
+            Items: =Choices('Idea category')
+            X: =520
+            Y: =352
+            Width: =140
+            Height: =44
+      - btnSubmit:
+          Control: Classic/Button
+          Properties:
+            Text: ="Submit idea"
+            X: =40
+            Y: =416
+            Width: =200
+            Height: =48
+            Fill: =RGBA(14, 124, 123, 1)
+            OnSelect: |-
+              =If(
+                  IsBlank(Trim(txtTitle.Text)),
+                  Notify("Please enter a title.", NotificationType.Error),
+                  Patch(
+                      Ideas,
+                      Defaults(Ideas),
+                      {
+                          Title: Trim(txtTitle.Text),
+                          Description: txtDescription.Text,
+                          Product: cmbProduct.Selected,
+                          'CBS element': cmbCBS.Selected,
+                          'Estimated saving (EUR)': If(IsBlank(txtSaving.Text), Blank(), Value(txtSaving.Text)),
+                          Effort: drpEffort.Selected.Value,
+                          Category: drpCategory.Selected.Value,
+                          Status: 'Idea status'.New,
+                          Submitter: User().FullName
+                      }
+                  );
+                  Reset(txtTitle); Reset(txtDescription); Reset(txtSaving); Reset(cmbProduct); Reset(cmbCBS);
+                  Notify("Thank you. Your idea was saved.", NotificationType.Success)
+              )
+      - lblMyIdeas:
+          Control: Label
+          Properties:
+            Text: ="My ideas"
+            X: =720
+            Y: =24
+            Width: =560
+            Height: =48
+            Size: =18
+            FontWeight: =FontWeight.Semibold
+            Color: =RGBA(14, 77, 91, 1)
+      - galMyIdeas:
+          Control: Gallery
+          Variant: Vertical
+          Properties:
+            Items: =SortByColumns(Filter(Ideas, Submitter = User().FullName), "createdon", SortOrder.Descending)
+            X: =720
+            Y: =88
+            Width: =560
+            Height: =600
+            TemplateSize: =72
+          Children:
+            - lblIdeaTitle:
+                Control: Label
+                Properties:
+                  Text: =ThisItem.Title
+                  X: =12
+                  Y: =6
+                  Width: =Parent.TemplateWidth - 24
+                  Height: =32
+                  FontWeight: =FontWeight.Semibold
+            - lblIdeaStatus:
+                Control: Label
+                Properties:
+                  Text: =Text(ThisItem.Status)
+                  X: =12
+                  Y: =36
+                  Width: =Parent.TemplateWidth - 24
+                  Height: =28
+                  Size: =11
+                  Color: =RGBA(102, 117, 122, 1)

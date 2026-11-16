@@ -1,0 +1,234 @@
+// Cost Cockpit - DAX measures and calculated columns
+// ----------------------------------------------------------------------------------------------
+// How to add the measures in one go: Power BI Desktop > DAX query view > paste the DEFINE block >
+// "Update model with changes" (or click "Add new measure" above each MEASURE line).
+// The calculated columns at the end are added one by one with Modeling > New column.
+// Expected results on the demo data are noted as comments; they come from engine/golden/.
+// Not run against a model from here: check the numbers on the demo data once.
+
+DEFINE
+
+// ---------------------------------------------------------------- R1 R2 R4  cost transparency
+MEASURE 'Cost Item'[Cost EUR] = SUM ( 'Cost Item'[Amount EUR] )                       // DEMO-V001: 91,380,000
+
+MEASURE 'Cost Item'[Reference kW] = SELECTEDVALUE ( 'Product'[Reference Size MW] ) * 1000
+
+MEASURE 'Cost Item'[Cost EUR per kW] = DIVIDE ( [Cost EUR], [Reference kW] )         // DEMO-V001: 913.80
+
+MEASURE 'Cost Item'[Cost Share] =
+    DIVIDE (
+        [Cost EUR],
+        CALCULATE ( [Cost EUR], REMOVEFILTERS ( 'CBS Element' ), REMOVEFILTERS ( 'Cost Item' ), REMOVEFILTERS ( 'Supplier' ) )
+    )
+
+MEASURE 'Cost Item'[Item Rank] =
+    IF (
+        HASONEVALUE ( 'Cost Item'[Cost Item Id] ),
+        RANKX ( ALLSELECTED ( 'Cost Item'[Cost Item Id], 'Cost Item'[Cost Item] ), [Cost EUR],, DESC, DENSE )
+    )
+
+MEASURE 'Cost Item'[Cumulative Share] =                                                // Pareto line; last item = 100 %
+    VAR _this = [Cost EUR]
+    VAR _total = CALCULATE ( [Cost EUR], ALLSELECTED ( 'Cost Item' ) )
+    VAR _cumulative =
+        SUMX ( FILTER ( ALLSELECTED ( 'Cost Item'[Cost Item Id], 'Cost Item'[Cost Item] ), [Cost EUR] >= _this ), [Cost EUR] )
+    RETURN DIVIDE ( _cumulative, _total )
+
+MEASURE 'Cost Item'[Items without Price] = COUNTROWS ( FILTER ( 'Cost Item', 'Cost Item'[Unit Price] = 0 || ISBLANK ( 'Cost Item'[Unit Price] ) ) )
+
+MEASURE 'Cost Item'[Share Low Confidence] =
+    DIVIDE ( CALCULATE ( [Cost EUR], 'Cost Item'[Confidence] = "Low" ), [Cost EUR] )
+
+// ---------------------------------------------------------------- R6  version comparison
+// Slicer 1: 'Cost Version'[Cost Version] (the version shown). Slicer 2: 'Compare Version'[Compare Version].
+MEASURE 'Cost Item'[Cost EUR Compare] =
+    CALCULATE (
+        [Cost EUR],
+        REMOVEFILTERS ( 'Cost Version' ),
+        TREATAS ( VALUES ( 'Compare Version'[Cost Version Id] ), 'Cost Version'[Cost Version Id] )
+    )
+
+MEASURE 'Cost Item'[Delta EUR] = [Cost EUR] - [Cost EUR Compare]                      // V002 vs V001: -1,000,000
+
+MEASURE 'Cost Item'[Delta Pct] = DIVIDE ( [Delta EUR], [Cost EUR Compare] )
+
+// ---------------------------------------------------------------- R7 R8 R3  what-if scenario (calculated on the fly)
+// Slicers: 'Size MW'[Size MW] (single select), 'Region'[Region] (single select), 'Feature'[Feature] (multi select, optional).
+// Same logic as flow 03 and engine/cost_engine.py.
+MEASURE 'Cost Item'[WhatIf Size MW] = SELECTEDVALUE ( 'Size MW'[Size MW], SELECTEDVALUE ( 'Product'[Reference Size MW] ) )
+
+MEASURE 'Cost Item'[WhatIf Base Cost EUR] =
+    VAR _size = [WhatIf Size MW]
+    VAR _ref = SELECTEDVALUE ( 'Product'[Reference Size MW] )
+    VAR _module = SELECTEDVALUE ( 'Product'[Module Size MW] )
+    VAR _sizeRatio = DIVIDE ( _size, _ref )
+    VAR _moduleRatio = DIVIDE ( ROUNDUP ( DIVIDE ( _size, _module ), 0 ), ROUNDUP ( DIVIDE ( _ref, _module ), 0 ) )
+    VAR _region = SELECTEDVALUE ( 'Region'[Region Id] )
+    RETURN
+        SUMX (
+            SUMMARIZE (
+                'Cost Item',
+                'CBS Element'[CBS Element Id],
+                'CBS Element'[Scaling Code],
+                'CBS Element'[Scaling Exponent],
+                'Cost Item'[Cost Type Value]
+            ),
+            VAR _base = CALCULATE ( SUM ( 'Cost Item'[Amount EUR] ) )
+            VAR _scale =
+                SWITCH (
+                    'CBS Element'[Scaling Code],
+                    1, _moduleRatio,
+                    2, POWER ( _sizeRatio, 'CBS Element'[Scaling Exponent] ),
+                    1
+                )
+            VAR _factor =
+                COALESCE (
+                    LOOKUPVALUE (
+                        'Regional Factor'[Factor],
+                        'Regional Factor'[Region Id], _region,
+                        'Regional Factor'[Cost Type Value], 'Cost Item'[Cost Type Value]
+                    ),
+                    1
+                )
+            RETURN _base * _scale * _factor
+        )
+
+MEASURE 'Cost Item'[WhatIf Feature Effect EUR] =
+    // Shown in total or by CBS element, scope or TIC category. Do not split it by cost type.
+    IF (
+        ISFILTERED ( 'Feature' ),
+        VAR _size = [WhatIf Size MW]
+        VAR _ref = SELECTEDVALUE ( 'Product'[Reference Size MW] )
+        VAR _module = SELECTEDVALUE ( 'Product'[Module Size MW] )
+        VAR _sizeRatio = DIVIDE ( _size, _ref )
+        VAR _moduleRatio = DIVIDE ( ROUNDUP ( DIVIDE ( _size, _module ), 0 ), ROUNDUP ( DIVIDE ( _ref, _module ), 0 ) )
+        VAR _region = SELECTEDVALUE ( 'Region'[Region Id] )
+        RETURN
+            SUMX (
+                'Feature Impact',
+                VAR _cbs = 'Feature Impact'[CBS Element Id]
+                VAR _type = 'Feature Impact'[Impact Type Value]
+                VAR _code = LOOKUPVALUE ( 'CBS Element'[Scaling Code], 'CBS Element'[CBS Element Id], _cbs )
+                VAR _exponent = LOOKUPVALUE ( 'CBS Element'[Scaling Exponent], 'CBS Element'[CBS Element Id], _cbs )
+                VAR _elementBase =
+                    CALCULATE (
+                        SUM ( 'Cost Item'[Amount EUR] ),
+                        REMOVEFILTERS ( 'Feature Impact' ),
+                        REMOVEFILTERS ( 'Feature' ),
+                        'CBS Element'[CBS Element Id] = _cbs
+                    )
+                VAR _base =
+                    SWITCH (
+                        _type,
+                        710000001, 'Feature Impact'[Value],
+                        710000002, 'Feature Impact'[Value] * _ref,
+                        'Feature Impact'[Value] / 100 * _elementBase
+                    )
+                VAR _scale =
+                    SWITCH (
+                        _type,
+                        710000001, 1,
+                        710000002, _sizeRatio,
+                        SWITCH ( _code, 1, _moduleRatio, 2, POWER ( _sizeRatio, _exponent ), 1 )
+                    )
+                VAR _factor =
+                    COALESCE (
+                        LOOKUPVALUE (
+                            'Regional Factor'[Factor],
+                            'Regional Factor'[Region Id], _region,
+                            'Regional Factor'[Cost Type Value], 'Feature Impact'[Cost Type Value]
+                        ),
+                        1
+                    )
+                RETURN _base * _scale * _factor
+            ),
+        0
+    )
+
+MEASURE 'Cost Item'[WhatIf Cost EUR] = [WhatIf Base Cost EUR] + [WhatIf Feature Effect EUR]
+    // V001, 100 MW, Germany, no feature: 91,380,000
+    // V001, 200 MW, Spain, features Outdoor installation + Redundant rectifier: 152,180,369
+    // V001,  20 MW, India, no feature: 20,535,270
+
+MEASURE 'Cost Item'[WhatIf Cost EUR per kW] = DIVIDE ( [WhatIf Cost EUR], [WhatIf Size MW] * 1000 )   // 913.80 / 760.90 / 1,026.76
+
+MEASURE 'Cost Item'[WhatIf Delta vs Reference EUR per kW] = [WhatIf Cost EUR per kW] - [Cost EUR per kW]
+
+// ---------------------------------------------------------------- R7 R8  stored scenarios (written by flow 03)
+MEASURE 'Scenario Line'[Scenario Cost EUR] = SUM ( 'Scenario Line'[Final Cost EUR] )
+
+MEASURE 'Scenario Line'[Scenario Cost EUR per kW] = SUM ( 'Scenario Line'[Cost per kW] )    // put Scenario on an axis or in a slicer
+
+MEASURE 'Scenario Line'[Scenario Feature Effect EUR] =
+    CALCULATE ( [Scenario Cost EUR], 'Scenario Line'[Line Type] = "Feature effect" )
+
+// ---------------------------------------------------------------- R9  benchmarks
+MEASURE 'Benchmark'[Benchmark EUR per kW] = AVERAGE ( 'Benchmark'[Value EUR per kW] )
+
+MEASURE 'Benchmark'[Own EUR per kW] = CALCULATE ( [Benchmark EUR per kW], 'Benchmark'[Own Product] = TRUE () )
+
+MEASURE 'Benchmark'[Gap to Best Benchmark EUR per kW] =
+    [Own EUR per kW] - CALCULATE ( MIN ( 'Benchmark'[Value EUR per kW] ), 'Benchmark'[Own Product] = FALSE () )
+
+// ---------------------------------------------------------------- R10 R12  targets and measures
+// Use with 'CBS Element'[L1 Element] on rows and a released version in the slicer.
+MEASURE 'Target'[Target EUR per kW] = SUM ( 'Target'[Target EUR per kW] )            // demo total: 790
+
+MEASURE 'Target'[Gap EUR per kW] = [Cost EUR per kW] - [Target EUR per kW]           // DEMO-1: 40.0, total: 123.8
+
+MEASURE 'Measure'[Weighted Saving EUR] =
+    SUMX (
+        FILTER ( 'Measure', 'Measure'[Measure Status] <> "Cancelled" ),
+        'Measure'[Saving EUR] * 'Measure'[Probability] / 100
+    )                                                                                 // M-001: 840,000
+
+MEASURE 'Measure'[Weighted Saving EUR per kW] = DIVIDE ( [Weighted Saving EUR], [Reference kW] )   // DEMO-1: 8.4
+
+MEASURE 'Target'[Open Gap EUR per kW] = [Gap EUR per kW] - [Weighted Saving EUR per kW]
+
+MEASURE 'Measure'[Secured Saving EUR] =                                               // degree of implementation 3 or higher
+    CALCULATE (
+        SUM ( 'Measure'[Saving EUR] ),
+        'Measure'[DI Level Value] >= 710000003,
+        'Measure'[Measure Status] <> "Cancelled"
+    )
+
+MEASURE 'Measure'[Realised Saving EUR] = SUM ( 'Measure'[Realised Saving EUR] )
+
+MEASURE 'Measure'[Measure Count] = COUNTROWS ( 'Measure' )
+
+MEASURE 'Measure'[Overdue Measures] =
+    COUNTROWS ( FILTER ( 'Measure', 'Measure'[Measure Status] = "Open" && 'Measure'[Due Date] < TODAY () ) )
+
+MEASURE 'Idea'[Idea Count] = COUNTROWS ( 'Idea' )
+
+MEASURE 'Idea'[New Ideas] = CALCULATE ( [Idea Count], 'Idea'[Idea Status] = "New" )
+
+// A DAX query needs an EVALUATE; this one lists the headline numbers for a quick check.
+EVALUATE
+ROW (
+    "Cost EUR", [Cost EUR],
+    "Target EUR per kW", [Target EUR per kW],
+    "Weighted Saving EUR", [Weighted Saving EUR]
+)
+
+
+// ==============================================================================================
+// Calculated columns - add with Modeling > New column on the table 'CBS Element'
+// ==============================================================================================
+//
+// Path = PATH ( 'CBS Element'[CBS Element Id], 'CBS Element'[Parent Id] )
+//
+// L1 Id = PATHITEM ( 'CBS Element'[Path], 1 )
+//
+// L1 Element = LOOKUPVALUE ( 'CBS Element'[CBS Element], 'CBS Element'[CBS Element Id], 'CBS Element'[L1 Id] )
+//
+// L1 Code = LOOKUPVALUE ( 'CBS Element'[CBS Code], 'CBS Element'[CBS Element Id], 'CBS Element'[L1 Id] )
+//
+// L2 Element =
+//     VAR _id = PATHITEM ( 'CBS Element'[Path], 2 )
+//     RETURN IF ( ISBLANK ( _id ), 'CBS Element'[CBS Element], LOOKUPVALUE ( 'CBS Element'[CBS Element], 'CBS Element'[CBS Element Id], _id ) )
+//
+// Scaling Code = IF ( ISBLANK ( 'CBS Element'[Scaling Method Value] ), BLANK (), 'CBS Element'[Scaling Method Value] - 710000000 )
+//
+// Sort 'CBS Element'[L1 Element] by 'CBS Element'[L1 Code] (Column tools > Sort by column).

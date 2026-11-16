@@ -1,0 +1,8 @@
+ItemID,Revision,ItemName,ParentItemID,Level,Quantity,Unit,UnitPrice,Currency,SupplierID,SupplierName,PriceDate
+100001,B,Cell stack,900000,1,5,pc,3800000,EUR,S-001,Supplier A (placeholder),2026-11-01
+100002,A,Module frame and piping,900000,1,5,pc,1000000,EUR,S-002,Supplier B (placeholder),2026-11-01
+100010,A,Separators and electrolyte system,900000,1,1,lot,6000000,EUR,S-003,Supplier C (placeholder),2026-11-01
+100020,C,Purification and drying unit,900000,1,1,lot,4200000,EUR,S-004,Supplier D (placeholder),2026-11-01
+100030,A,Transformer-rectifier set,900000,1,1,lot,13200000,USD,S-005,Supplier E (placeholder),2026-11-01
+100040,A,Cooling and water treatment package,900000,1,1,lot,5000000,EUR,S-006,Supplier F (placeholder),2026-11-01
+100099,A,New instrument package (not mapped yet),900000,1,1,lot,250000,EUR,S-007,Supplier G (placeholder),2026-11-01

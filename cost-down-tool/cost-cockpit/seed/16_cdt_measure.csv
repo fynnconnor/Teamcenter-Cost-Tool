@@ -1,0 +1,4 @@
+cdt_code,cdt_name,cdt_Product@cdt_code,cdt_CBSElement@cdt_code,cdt_TargetVersion@cdt_code,cdt_savingeur,cdt_oneoffcosteur,cdt_effortpd,cdt_dayrateeur,cdt_probability,cdt_dilevel,cdt_duedate,cdt_status
+M-001,Standardise cell stack end plates,DEMO,DEMO-1.1,DEMO-V002,1200000,150000,60,800,70,DI3 Decided,2027-03-31,Open
+M-002,Skid-mounted purification unit,DEMO,DEMO-2.2,DEMO-V002,500000,50000,40,800,50,DI2 Evaluated,2027-06-30,Open
+M-003,Outdoor installation as standard,DEMO,DEMO-5.1,,3200000,300000,150,800,40,DI1 Idea,2027-12-31,Open

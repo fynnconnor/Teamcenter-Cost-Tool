@@ -1,0 +1,31 @@
+scenario,scope,tic,cost_eur,cost_per_kw
+SCN-100-DE,EPC scope,Civil & buildings,8000000.0,80.0
+SCN-100-DE,EPC scope,Engineering & project management,5500000.0,55.0
+SCN-100-DE,EPC scope,"Indirects, commissioning & contingency",10000000.0,100.0
+SCN-100-DE,EPC scope,Installation & construction,12000000.0,120.0
+SCN-100-DE,EPC scope,Process balance of plant,4000000.0,40.0
+SCN-100-DE,EPC scope,Utilities,5000000.0,50.0
+SCN-100-DE,NCA scope,Electrolyser modules,27000000.0,270.0
+SCN-100-DE,NCA scope,Engineering & project management,2000000.0,20.0
+SCN-100-DE,NCA scope,Power supply & electrical,11880000.0,118.8
+SCN-100-DE,NCA scope,Process balance of plant,6000000.0,60.0
+SCN-200-ES,EPC scope,Civil & buildings,7359006.711,36.795
+SCN-200-ES,EPC scope,Engineering & project management,6531564.1583,32.6578
+SCN-200-ES,EPC scope,"Indirects, commissioning & contingency",16714570.8153,83.5729
+SCN-200-ES,EPC scope,Installation & construction,17759231.4912,88.7962
+SCN-200-ES,EPC scope,Process balance of plant,6276672.7832,31.3834
+SCN-200-ES,EPC scope,Utilities,7578582.8326,37.8929
+SCN-200-ES,NCA scope,Electrolyser modules,54000000.0,270.0
+SCN-200-ES,NCA scope,Engineering & project management,1800000.0,9.0
+SCN-200-ES,NCA scope,Power supply & electrical,24413710.9916,122.0686
+SCN-200-ES,NCA scope,Process balance of plant,9747028.7563,48.7351
+SCN-20-IN,EPC scope,Civil & buildings,1766515.6904,88.3258
+SCN-20-IN,EPC scope,Engineering & project management,1444590.2924,72.2295
+SCN-20-IN,EPC scope,"Indirects, commissioning & contingency",2152378.2719,107.6189
+SCN-20-IN,EPC scope,Installation & construction,1821243.1531,91.0622
+SCN-20-IN,EPC scope,Process balance of plant,1264654.8036,63.2327
+SCN-20-IN,EPC scope,Utilities,1713288.5448,85.6644
+SCN-20-IN,NCA scope,Electrolyser modules,4900000.0,245.0
+SCN-20-IN,NCA scope,Engineering & project management,1000000.0,50.0
+SCN-20-IN,NCA scope,Power supply & electrical,2722290.3671,136.1145
+SCN-20-IN,NCA scope,Process balance of plant,1750309.1244,87.5155

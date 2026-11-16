@@ -1,0 +1,4 @@
+code,name,cbs,di,weighted_saving,implementation_cost,priority_score
+M-001,Standardise cell stack end plates,DEMO-1.1,DI3 Decided,840000.0,198000.0,4.2424
+M-002,Skid-mounted purification unit,DEMO-2.2,DI2 Evaluated,250000.0,82000.0,3.0488
+M-003,Outdoor installation as standard,DEMO-5.1,DI1 Idea,1280000.0,420000.0,3.0476

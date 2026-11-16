@@ -1,0 +1,4 @@
+cdt_name,cdt_description,cdt_Product@cdt_code,cdt_CBSElement@cdt_code,cdt_estimatedsavingeur,cdt_effort,cdt_category,cdt_status,cdt_submittername
+Standardise cell stack end plates,One end plate design for all module variants,DEMO,DEMO-1.1,1200000,Medium,Standardisation,Converted to measure,Demo user
+Skid-mounted purification unit,Pre-assembled skid instead of site assembly,DEMO,DEMO-2.2,500000,Medium,Scope / EPC interface,Converted to measure,Demo user
+Shared cooling loop for stacks and rectifiers,One cooling circuit instead of two,DEMO,DEMO-4.1,300000,Small,Design,New,Demo user
